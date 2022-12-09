@@ -118,28 +118,47 @@ Mostravi di lontano.</p>
 
 <div class="full-width" style="text-align: center">
 <div class="xl-text" style="top: 0;">More than 6000 pictures were gathered from MANGO’s 1000 supplier factories’ addresses.</div>
-<div class="xl-text hidden" style="bottom: 0;">these photos have new stories to tell from the perspective of these places.</div>
+<div class="xl-text" style="bottom: 0; opacity: 0; mix-blend-mode: difference">these photos have new stories to tell from the perspective of these places.</div>
 </div>
 
 <!-- SCRIPT -->
 <script>
 var section = $('.full-width div');
 
-$(section).mouseover(function() {
+section.mouseover(function () {
   $(this).css("color", "white"); $("#header a").css("color", "white"); $("marquee").css("color", "white");
   $(this).css("mix-blend-mode", "difference"); $("#header").css("mix-blend-mode", "difference"); $("marquee").css("mix-blend-mode", "difference");
 
-  let imagepath = "./assets/img/home" + ($(this).index() + 1) + ".gif"
+
+  var index = $(this).parent().index() - 1;
+  var imagepath = "./assets/img/home" + index + ".gif"
+
   $(this).parent().css("background-image", "url('https://mir-s3-cdn-cf.behance.net/project_modules/fs/7099fc28008799.56e41b31e770e.gif')");
   $(this).parent().addClass("with-background");
   // $(".full-width").css("background-image", imagepath);
+
+  if (index == 4) {
+   $(this).css("opacity", "0");
+   $(this).siblings().css("opacity", "1");
+ }
 })
 
-$(section).mouseout(function() {
+
+section.mouseout(function() {
   $(this).css("color", "black"); $("#header a").css("color", "black"); $("marquee").css("color", "black");
   $(this).css("mix-blend-mode", "initial"); $("#header").css("mix-blend-mode", "initial"); $("marquee").css("mix-blend-mode", "initial");
   $(this).parent().removeClass("with-background");
   $(this).parent().css("background", "none");
+  $(this).css("opacity", "1");
+  $(this).siblings().css("opacity", "0");
 })
 </script>
+
+
+<script>
+$( window ).load(function() {
+  $(window).scrollTop(0);
+});
+</script>
+
 </body>
