@@ -111,6 +111,16 @@ Mostravi di lontano.</p>
 <div class="xl-text" style="top: 0;">Fast fashion companies entrust their production to garment suppliers around the world.</div>
 </div>
 
+<div class="full-width">
+<div class="xl-text" style="bottom: 0;">In the Google Maps location of these factories, people uploaded their photos.</div>
+</div>
+
+
+<div class="full-width" style="text-align: center">
+<div class="xl-text" style="top: 0;">More than 6000 pictures were gathered from MANGO’s 1000 supplier factories’ addresses.</div>
+<div class="xl-text hidden" style="bottom: 0;">these photos have new stories to tell from the perspective of these places.</div>
+</div>
+
 <!-- SCRIPT -->
 <script>
 var section = $('.full-width div');
@@ -120,15 +130,16 @@ $(section).mouseover(function() {
   $(this).css("mix-blend-mode", "difference"); $("#header").css("mix-blend-mode", "difference"); $("marquee").css("mix-blend-mode", "difference");
 
   let imagepath = "./assets/img/home" + ($(this).index() + 1) + ".gif"
-  $(".full-width").css("background-image", "url('https://mir-s3-cdn-cf.behance.net/project_modules/fs/7099fc28008799.56e41b31e770e.gif')");
-  $(".full-width").addClass("with-background");
+  $("body").css("background-image", "url('https://mir-s3-cdn-cf.behance.net/project_modules/fs/7099fc28008799.56e41b31e770e.gif')");
+  $("body").addClass("with-background");
   // $(".full-width").css("background-image", imagepath);
 })
 
 $(section).mouseout(function() {
   $(this).css("color", "black"); $("#header a").css("color", "black"); $("marquee").css("color", "black");
   $(this).css("mix-blend-mode", "initial"); $("#header").css("mix-blend-mode", "initial"); $("marquee").css("mix-blend-mode", "initial");
-  $(".full-width").css("background", "none");
+  $("body").removeClass("with-background");
+  $("body").css("background", "none");
 })
 </script>
 </body>
