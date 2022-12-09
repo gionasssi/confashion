@@ -1,5 +1,9 @@
 .full-width {
   padding: var(--margin);
+
+  background-size:     cover;
+  background-repeat:   no-repeat;
+  background-position: center center;
 }
 
 .full-width div {
