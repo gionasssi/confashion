@@ -11,4 +11,5 @@ marquee {
   top: var(--margin);
   margin-top: var(--margin);
   padding-top: var(--margin);
+  text-transform: uppercase;
 }
