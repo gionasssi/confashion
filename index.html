@@ -130,16 +130,16 @@ $(section).mouseover(function() {
   $(this).css("mix-blend-mode", "difference"); $("#header").css("mix-blend-mode", "difference"); $("marquee").css("mix-blend-mode", "difference");
 
   let imagepath = "./assets/img/home" + ($(this).index() + 1) + ".gif"
-  $("body").css("background-image", "url('https://mir-s3-cdn-cf.behance.net/project_modules/fs/7099fc28008799.56e41b31e770e.gif')");
-  $("body").addClass("with-background");
+  $(".full-width").css("background-image", "url('https://mir-s3-cdn-cf.behance.net/project_modules/fs/7099fc28008799.56e41b31e770e.gif')");
+  $(".full-width").addClass("with-background");
   // $(".full-width").css("background-image", imagepath);
 })
 
 $(section).mouseout(function() {
   $(this).css("color", "black"); $("#header a").css("color", "black"); $("marquee").css("color", "black");
   $(this).css("mix-blend-mode", "initial"); $("#header").css("mix-blend-mode", "initial"); $("marquee").css("mix-blend-mode", "initial");
-  $("body").removeClass("with-background");
-  $("body").css("background", "none");
+  $(".full-width").removeClass("with-background");
+  $(".full-width").css("background", "none");
 })
 </script>
 </body>
