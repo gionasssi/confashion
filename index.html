@@ -1,0 +1,140 @@
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FFFF</title>
+<link rel = "icon" href ="assets/img/logo.svg" type = "image/x-icon">
+
+<!-- BOOTSTRAP -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+<!-- GLOBAL STYLESHEET-->
+<link rel='stylesheet' type='text/css' href='./style/global.css'>
+<!-- Desktop stylesheet -->
+<link rel='stylesheet' type='text/css' href='./style/home.css' media="screen and (min-width:992px)">
+<!-- Mobile stylesheet -->
+<!-- <link rel='stylesheet' type='text/css' href='mobile.css' media="screen and (max-width:991px)"> -->
+
+<!-- JQUERY -->
+<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+</head>
+
+
+<body>
+
+<!-- HEADER -->
+<div id="header" class="d-flex justify-content-between m-text">
+<a href="index.html">FFFF</a>
+<a href="map.html">MAP</a>
+<a href="atlas.html">ATLAS</a>
+<a href="project.html">PROJECT</a>
+</div>
+
+<!-- MARQUEE -->
+<marquee class="marquee" width="100%" behavior="scroll" class="s-text">
+      <p id="text-marquee">Silvia, rimembri ancora
+Quel tempo della tua vita mortale,
+Quando beltà splendea
+Negli occhi tuoi ridenti e fuggitivi,
+E tu, lieta e pensosa, il limitare            5
+Di gioventù salivi?
+
+Sonavan le quiete
+Stanze, e le vie dintorno,
+Al tuo perpetuo canto,
+Allor che all'opre femminili intenta        10
+Sedevi, assai contenta
+Di quel vago avvenir che in mente avevi.
+Era il maggio odoroso: e tu solevi
+Così menare il giorno.
+
+Io gli studi leggiadri                15
+Talor lasciando e le sudate carte,
+Ove il tempo mio primo
+E di me si spendea la miglior parte,
+D'in su i veroni del paterno ostello
+Porgea gli orecchi al suon della tua voce,    20
+Ed alla man veloce
+Che percorrea la faticosa tela.
+Mirava il ciel sereno,
+Le vie dorate e gli orti,
+E quinci il mar da lungi, e quindi il monte.    25
+Lingua mortal non dice
+Quel ch'io sentiva in seno.
+
+Che pensieri soavi,
+Che speranze, che cori, o Silvia mia!
+Quale allor ci apparia                30
+La vita umana e il fato!
+Quando sovviemmi di cotanta speme,
+Un affetto mi preme
+Acerbo e sconsolato,
+E tornami a doler di mia sventura.        35
+O natura, o natura,
+Perchè non rendi poi
+Quel che prometti allor? perchè di tanto
+Inganni i figli tuoi?
+
+Tu pria che l'erbe inaridisse il verno,        40
+Da chiuso morbo combattuta e vinta,
+Perivi, o tenerella. E non vedevi
+Il fior degli anni tuoi;
+Non ti molceva il core
+La dolce lode or delle negre chiome,        45
+Or degli sguardi innamorati e schivi;
+Nè teco le compagne ai dì festivi
+Ragionavan d'amore.
+
+Anche peria fra poco
+La speranza mia dolce: agli anni miei        50
+Anche negaro i fati
+La giovanezza. Ahi come,
+Come passata sei,
+Cara compagna dell'età mia nova,
+Mia lacrimata speme!                55
+Questo è quel mondo? questi
+I diletti, l'amor, l'opre, gli eventi
+Onde cotanto ragionammo insieme?
+Questa la sorte dell'umane genti?
+All'apparir del vero                    60
+Tu, misera, cadesti: e con la mano
+La fredda morte ed una tomba ignuda
+Mostravi di lontano.</p>
+</marquee>
+
+<!-- MAIN -->
+<div class="full-width">
+<div class="xxl-text" style="position: absolute; bottom: 0;"><span style="text-decoration: underline">FOUND</span> IN FAST<br>FASHION FACTORIES</div>
+
+<!-- SCRIPT -->
+<script>
+var section = $('.full-width div');
+
+$(section).mouseover(function() {
+  $(this).css("color", "white"); $("#header a").css("color", "white"); $("marquee").css("color", "white");
+  $(this).css("mix-blend-mode", "difference"); $("#header a").css("mix-blend-mode", "difference"); $("marquee").css("mix-blend-mode", "difference");
+
+  let imagepath = "./assets/img/home" + ($(this).index() + 1) + ".gif"
+  $(".full-width").css("background-image", "url('https://mir-s3-cdn-cf.behance.net/project_modules/fs/7099fc28008799.56e41b31e770e.gif')");
+  // $(".full-width").css("background-image", imagepath);
+})
+
+$(section).mouseout(function() {
+  $(this).css("color", "black"); $("#header a").css("color", "black"); $("marquee").css("color", "black");
+  $(this).css("mix-blend-mode", "initial"); $("#header a").css("mix-blend-mode", "initial"); $("marquee").css("mix-blend-mode", "initial");
+  $(".full-width").css("background", "none");
+})
+
+// $(".full-width div").mouseover(function() {
+//   $(this).css("color", "white");
+//   $(this).css("mix-blend-mode", "difference");
+//   $(".full-width").css("background-image", "url('http://i.stack.imgur.com/kx8MT.gif')");
+// })
+//
+// $(".full-width div").mouseout(function() {
+//   $(this).css("color", "black");
+//   $(this).css("mix-blend-mode", "initial");
+//   $(".full-width").css("background", "none");
+// })
+</script>
+</body>

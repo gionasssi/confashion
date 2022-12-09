@@ -1,0 +1,14 @@
+.full-width {
+  padding: var(--margin);
+}
+
+.full-width div {
+  cursor: pointer;
+}
+
+marquee {
+  position: fixed;
+  top: var(--margin);
+  margin-top: var(--margin);
+  padding-top: var(--margin);
+}

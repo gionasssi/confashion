@@ -1,0 +1,130 @@
+/* LOAD FONTS */
+@font-face {
+  font-family: "TWK Lausanne 350";
+  src: url("../assets/font/TWKLausanne-300.otf") format("opentype"),
+  font-weight: 300; font-style: normal;
+  }
+
+@font-face {
+  font-family: "TWK Lausanne 350";
+  src: url("../assets/font/TWKLausanne-300Italic.otf") format("opentype"),
+  font-weight: 300; font-style: italic;
+  }
+
+@font-face {
+  font-family: "TWK Lausanne 350";
+  src: url("../assets/font/TWKLausanne-350.otf") format("opentype");
+  font-weight: 350; font-style: normal;
+  }
+
+@font-face {
+  font-family: "TWK Lausanne 350";
+  src: url("../assets/font/TWKLausanne-350Italic.otf") format("opentype");
+  font-weight: 350; font-style: italic;
+  }
+
+@font-face {
+  font-family: "TWK Lausanne 350";
+  src: url("../assets/font/TWKLausanne-400.otf") format("opentype");
+  font-weight: 400; font-style: normal;
+  }
+
+@font-face {
+  font-family: "TWK Lausanne 350";
+  src: url("../assets/font/TWKLausanne-400Italic.otf") format("opentype");
+  font-weight: 400; font-style: italic;
+  }
+
+
+@font-face {
+  font-family: "TWK Lausanne 350";
+  src: url("../assets/font/TWKLausanne-450.otf") format("opentype");
+  font-weight: 450; font-style: normal;
+  }
+
+@font-face {
+  font-family: "TWK Lausanne 350";
+  src: url("../assets/font/TWKLausanne-450Italic.otf") format("opentype");
+  font-weight: 450; font-style: italic;
+  }
+
+
+/* VARIABLES */
+
+/* GLOBAL VARIABLES */
+:root {
+/* IT'S JUST AN EXAMPLE */
+--blue: #0000ff;
+}
+
+
+/* DESKTOP VARIABLES */
+@media (min-width: 992px) {
+  :root {
+  /* MARGINS */
+  --margin: 20px;
+  }
+
+/* DESKTOP FONT SIZES */
+.s-text {font-size: 16px}
+.m-text {font-size: 20px}
+.l-text {font-size: 36px}
+.xl-text {font-size: 100px}
+.xxl-text {font-size: 9.7vw; line-height: 10vw;}
+}
+
+
+/* MOBILE VARIABLES */
+@media (max-width: 991.98px) {
+  :root {
+  /* MARGINS */
+  --margin: 20px;
+  }
+
+/* MOBILE FONT SIZES */
+.s-text {font-size: 16px}
+.m-text {font-size: 20px}
+.l-text {font-size: 36px}
+.xl-text {font-size: 100px}
+.xxl-text {font-size: 120px;}
+}
+
+
+
+/* GENERAL FEATURES */
+body {
+  font-family: "TWK Lausanne 350";
+  max-width: 100vw;
+  top: 0;
+  left: 0;
+  margin: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  box-sizing: content-box;
+  scrollbar-width: none;
+  color: black;
+}
+
+.full-width {
+  width: 100vw;
+  height: 100vh;
+}
+
+/* STYLE LINKS */
+a {
+color: black;
+text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  color: black;
+  font-weight: 450;
+}
+
+/* HEADER */
+#header {
+  position: fixed;
+  padding: var(--margin);
+  width: 100%;
+  font-weight: 400;
+}
