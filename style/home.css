@@ -1,19 +1,41 @@
-.full-width {
-  padding: var(--margin);
+/* DESKTOP VARIABLES */
+@media (min-width: 992px) {
+  :root {
+  /* MARGINS */
+  --margin: 20px;
+  --top-margin: 60px;
+  }
 
-  background-size:     cover;
-  background-repeat:   no-repeat;
+/* MOBILE VARIABLES */
+@media (max-width: 991.98px) {
+  :root {
+  /* MARGINS */
+  --margin: 20px;
+  }
+}
+
+.full-width {
+  position: relative;
+}
+
+.with-background {
+  background-size: cover;
+  background-repeat: no-repeat;
   background-position: center center;
 }
 
 .full-width div {
+  padding: var(--margin) var(--margin) var(--margin) var(--margin);
+  margin-top: var(--top-margin);
   cursor: pointer;
+  position: absolute;
+  text-transform: uppercase;
 }
 
 marquee {
   position: fixed;
-  top: var(--margin);
-  margin-top: var(--margin);
-  padding-top: var(--margin);
+  top: var(--top-margin);
   text-transform: uppercase;
+  transform:translate(0, -7%);
+  z-index: 10;
 }

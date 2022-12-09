@@ -104,7 +104,12 @@ Mostravi di lontano.</p>
 
 <!-- MAIN -->
 <div class="full-width">
-<div class="xxl-text" style="position: absolute; bottom: 0;"><span style="text-decoration: underline">FOUND</span> IN FAST<br>FASHION FACTORIES</div>
+<div class="xxl-text" style="bottom: 0;"><span style="text-decoration: underline">Found</span> in fast<br>fashion factories</div>
+</div>
+
+<div class="full-width">
+<div class="xl-text" style="top: 0;">Fast fashion companies entrust their production to garment suppliers around the world.</div>
+</div>
 
 <!-- SCRIPT -->
 <script>
@@ -112,29 +117,18 @@ var section = $('.full-width div');
 
 $(section).mouseover(function() {
   $(this).css("color", "white"); $("#header a").css("color", "white"); $("marquee").css("color", "white");
-  $(this).css("mix-blend-mode", "difference"); $("#header a").css("mix-blend-mode", "difference"); $("marquee").css("mix-blend-mode", "difference");
+  $(this).css("mix-blend-mode", "difference"); $("#header").css("mix-blend-mode", "difference"); $("marquee").css("mix-blend-mode", "difference");
 
   let imagepath = "./assets/img/home" + ($(this).index() + 1) + ".gif"
   $(".full-width").css("background-image", "url('https://mir-s3-cdn-cf.behance.net/project_modules/fs/7099fc28008799.56e41b31e770e.gif')");
+  $(".full-width").addClass("with-background");
   // $(".full-width").css("background-image", imagepath);
 })
 
 $(section).mouseout(function() {
   $(this).css("color", "black"); $("#header a").css("color", "black"); $("marquee").css("color", "black");
-  $(this).css("mix-blend-mode", "initial"); $("#header a").css("mix-blend-mode", "initial"); $("marquee").css("mix-blend-mode", "initial");
+  $(this).css("mix-blend-mode", "initial"); $("#header").css("mix-blend-mode", "initial"); $("marquee").css("mix-blend-mode", "initial");
   $(".full-width").css("background", "none");
 })
-
-// $(".full-width div").mouseover(function() {
-//   $(this).css("color", "white");
-//   $(this).css("mix-blend-mode", "difference");
-//   $(".full-width").css("background-image", "url('http://i.stack.imgur.com/kx8MT.gif')");
-// })
-//
-// $(".full-width div").mouseout(function() {
-//   $(this).css("color", "black");
-//   $(this).css("mix-blend-mode", "initial");
-//   $(".full-width").css("background", "none");
-// })
 </script>
 </body>
