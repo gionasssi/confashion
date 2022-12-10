@@ -1,0 +1,86 @@
+[
+    {
+        "images": [
+            9,
+            10,
+            11
+        ],
+        "img": "5.jpg",
+        "layout": "inception_vectors",
+        "label": "Cluster 1"
+    },
+    {
+        "images": [
+            4,
+            6
+        ],
+        "img": "15.jpg",
+        "layout": "inception_vectors",
+        "label": "Cluster 2"
+    },
+    {
+        "images": [
+            5,
+            7
+        ],
+        "img": "16.jpg",
+        "layout": "inception_vectors",
+        "label": "Cluster 3"
+    },
+    {
+        "images": [
+            0
+        ],
+        "img": "1.jpg",
+        "layout": "inception_vectors",
+        "label": "Cluster 4"
+    },
+    {
+        "images": [
+            1
+        ],
+        "img": "10.jpg",
+        "layout": "inception_vectors",
+        "label": "Cluster 5"
+    },
+    {
+        "images": [
+            2
+        ],
+        "img": "11.jpg",
+        "layout": "inception_vectors",
+        "label": "Cluster 6"
+    },
+    {
+        "images": [
+            3
+        ],
+        "img": "12.jpg",
+        "layout": "inception_vectors",
+        "label": "Cluster 7"
+    },
+    {
+        "images": [
+            8
+        ],
+        "img": "2.jpg",
+        "layout": "inception_vectors",
+        "label": "Cluster 8"
+    },
+    {
+        "images": [
+            12
+        ],
+        "img": "6.jpg",
+        "layout": "inception_vectors",
+        "label": "Cluster 9"
+    },
+    {
+        "images": [
+            13
+        ],
+        "img": "7.jpg",
+        "layout": "inception_vectors",
+        "label": "Cluster 10"
+    }
+]
