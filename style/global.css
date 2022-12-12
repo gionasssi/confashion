@@ -124,7 +124,8 @@ a:hover {
 
 /* HEADER */
 #header {
-  z-index: 10;
+  z-index: 100;
+  background-color: #fff;
   position: fixed;
   padding: var(--margin);
   width: 100%;
