@@ -63,7 +63,8 @@
   :root {
   /* MARGINS */
   --margin: 0.9vw;
-  --top-margin: 3vw;
+  --top-margin: 3vw;;
+  --top-higher-margin: 5vw;
   }
 
 /* DESKTOP FONT SIZES */
@@ -104,6 +105,7 @@ body {
   box-sizing: content-box;
   scrollbar-width: none;
   color: black;
+  font-weight: 400;
 }
 
 .full-width {
@@ -135,7 +137,6 @@ a:hover {
   padding: var(--margin);
   position: relative;
   width: 100%;
-  font-weight: 400;
 }
 
 #header a {
