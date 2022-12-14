@@ -23,22 +23,22 @@
 <!-- HEADER -->
 <div id="header">
 <div id="header-row-1" class="d-flex justify-content-between m-text">
-<a href="index.html">FFFF</a>
+<a href="index.html"><img src="assets/img/logo.svg"></a>
 <a href="map.html">MAP</a>
 <a href="atlas.html">ATLAS</a>
 <a href="project.html" style="color: blue">PROJECT</a>
 </div>
 <div id="header-row-2" class="d-flex justify-content-around m-text">
-<a href="index.html">WHAT</a>
-<a href="map.html">WHY</a>
-<a href="atlas.html">HOW</a>
-<a href="project.html">WHO</a>
+<a href="#what"  id="what-bm"style="color: blue">WHAT</a>
+<a href="#why" id="why-bm">WHY</a>
+<a href="#how" id="how-bm">HOW</a>
+<a href="#who" id="who-bm">WHO</a>
 </div>
 </div>
 
 <main id="scrollsnap">
 
-<div class="full-width xl-text scrolledsnap standard-margin top-header-margin">
+<div class="full-width xl-text scrolledsnap standard-margin top-header-margin" id = "what">
   <div style="position: relative">
   FOUND IN FAST FASHION FACTORIES collects 6388 photos posted on Google Maps with the addresses
   <div class="m-text d-flex justify-content-between col-3" style="position: absolute; right: 0; bottom: 0; color: blue" class="m-text">
@@ -47,7 +47,7 @@
   <div>of 1000 garment factories around<br>the world. All the addresses were found <br>in the list of level 1 (tier 1) suppliers that have produced for MANGO in 2021.</div>
 </div>
 
-<div class="full-width d-flex gy-0 scrolledsnap">
+<div class="full-width d-flex gy-0 scrolledsnap" id="why">
 
   <div class="col-6 standard-margin top-header-margin" style="position: relative">
 
@@ -72,6 +72,10 @@
   </div>
 </div>
 
+<div class="full-width scrolledsnap standard-margin top-header-margin xl-text">By republishing the data uploaded in the factories areas, FFFF makes everyday objects, people and spaces that are universally familiar accessible for people to consult. The goal is to get closer to the reality of these places and restore the discarded physicality of the fashion garments industry.</div>
+
+
+
 <!-- <div class="full-width d-flex gy-0">
   <div class="d-inline-block col-9" data-scroll-speed="1">
   <img src="./assets/img/frame 51.png">
@@ -87,9 +91,6 @@
 <!-- JQUERY -->
 <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 
-<script>
-$("body").scroll(function () {console.log("pappa")})
-</script>
 
 <!-- <script>
   $.fn.moveIt = function(){
@@ -122,5 +123,28 @@ $(function(){
   $('[data-scroll-speed]').moveIt();
 });
 </script> -->
+
+
+<script>
+var pageheight = $(".full-width").height();
+
+$("#scrollsnap").scroll( function () {
+
+  if ($("#scrollsnap").scrollTop() == 0) {
+$("#what-bm").css("color", "blue")
+$("#what-bm").siblings().css("color", "black")
+}
+
+if ($("#scrollsnap").scrollTop() > 0) {
+$("#why-bm").css("color", "blue")
+$("#why-bm").siblings().css("color", "black")
+}
+
+if ($("#scrollsnap").scrollTop() > pageheight*3) {
+$("#how-bm").css("color", "blue")
+$("#how-bm").siblings().css("color", "black")
+  }
+})
+</script>
 
 </body>

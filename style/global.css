@@ -140,10 +140,15 @@ a:hover {
   width: 100%;
 }
 
+#header img {
+  height: 1.3vw;
+  transform:translate(0, -15%)
+}
+
 #header a {
   /* border: solid; */
   line-height: 1.1vw;
-  transform:translate(0, +0.1vw)
+  transform:translate(0, 15%)
 }
 
 #header-row-1 {
