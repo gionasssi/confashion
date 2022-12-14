@@ -1,13 +1,13 @@
 /* LOAD FONTS */
 @font-face {
   font-family: "TWK Lausanne 350";
-  src: url("../assets/font/TWKLausanne-300.otf") format("opentype"),
+  src: url("../assets/font/TWKLausanne-300.otf") format("opentype");
   font-weight: 300; font-style: normal;
   }
 
 @font-face {
   font-family: "TWK Lausanne 350";
-  src: url("../assets/font/TWKLausanne-300Italic.otf") format("opentype"),
+  src: url("../assets/font/TWKLausanne-300Italic.otf") format("opentype");
   font-weight: 300; font-style: italic;
   }
 
@@ -53,8 +53,8 @@
 
 /* GLOBAL VARIABLES */
 :root {
-/* IT'S JUST AN EXAMPLE */
 --blue: #0000ff;
+--grey: #ededed;
 }
 
 
@@ -62,15 +62,15 @@
 @media (min-width: 992px) {
   :root {
   /* MARGINS */
-  --margin: 20px;
-  --top-margin: 60px;
+  --margin: 0.9vw;
+  --top-margin: 3vw;
   }
 
 /* DESKTOP FONT SIZES */
-.s-text {font-size: 16px}
-.m-text {font-size: 20px}
-.l-text {font-size: 36px}
-.xl-text {font-size: 5.3vw; line-height: 6.5vw;}
+.s-text {font-size: 0.5vw}
+.m-text {font-size: 1.5vw; line-height: 1.7vw}
+.l-text {font-size: 56px}
+.xl-text {font-size: 5.2vw; line-height: 5.5vw;}
 .xxl-text {font-size: 9.7vw; line-height: 10vw;}
 }
 
@@ -126,8 +126,45 @@ a:hover {
 #header {
   z-index: 10;
   position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+#header div {
   padding: var(--margin);
+  position: relative;
   width: 100%;
   font-weight: 400;
-  line-height: 12px;
+}
+
+#header a {
+  /* border: solid; */
+  line-height: 1.1vw;
+  transform:translate(0, +0.1vw)
+}
+
+#header-row-1 {
+background-color: white;
+}
+
+#header-row-2 {
+background-color: var(--grey);
+}
+
+.d-inline-block img {
+  width: 100%;
+}
+
+.d-inline-block {
+  /* overflow-y: scroll; */
+  position: relative;
+}
+
+.standard-margin {
+  padding: var(--margin)
+}
+
+.top-header-margin {
+  padding-top: 6vw;
 }

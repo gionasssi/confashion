@@ -1,32 +1,10 @@
-/* DESKTOP VARIABLES */
-@media (min-width: 992px) {
-  :root {
-  /* MARGINS */
-  --margin: 20px;
-  --top-margin: 60px;
-  }
-
-/* MOBILE VARIABLES */
-@media (max-width: 991.98px) {
-  :root {
-  /* MARGINS */
-  --margin: 20px;
-  }
-}
-
 .full-width {
   position: relative;
 }
 
-.with-background {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
 .full-width div {
-  padding: var(--margin) var(--margin) var(--margin) var(--margin);
-  margin-top: var(--top-margin);
+  padding: var(--top-margin) var(--margin) var(--margin) var(--margin);
+  margin-top: 2vw;
   cursor: pointer;
   position: absolute;
   text-transform: uppercase;
@@ -38,4 +16,27 @@ marquee {
   text-transform: uppercase;
   transform:translate(0, -8%);
   z-index: 10;
+}
+
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+
+#scrollsnap::-webkit-scrollbar {
+  display: none;
+}
+
+#scrollsnap {
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+  /* scroll-snap-points-y: repeat(100vh); */
+}
+
+.scrolledsnap {
+    scroll-snap-align: start;
+    position:relative;
 }

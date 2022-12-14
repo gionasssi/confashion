@@ -1,0 +1,121 @@
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FFFF - project</title>
+<link rel = "icon" href ="assets/img/logo.svg" type = "image/x-icon">
+
+<!-- BOOTSTRAP -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+<!-- GLOBAL STYLESHEET-->
+<link rel='stylesheet' type='text/css' href='./style/global.css'>
+<!-- Desktop stylesheet -->
+<link rel='stylesheet' type='text/css' href='./style/project.css' media="screen and (min-width:992px)">
+<!-- Mobile stylesheet -->
+<!-- <link rel='stylesheet' type='text/css' href='./style/mobile.css' media="screen and (max-width:991px)"> -->
+
+</head>
+
+
+<body></body>
+
+<!-- HEADER -->
+<div id="header">
+<div id="header-row-1" class="d-flex justify-content-between m-text">
+<a href="index.html">FFFF</a>
+<a href="map.html">MAP</a>
+<a href="atlas.html">ATLAS</a>
+<a href="project.html">PROJECT</a>
+</div>
+<div id="header-row-2" class="d-flex justify-content-around m-text">
+<a href="index.html">WHAT</a>
+<a href="map.html">WHY</a>
+<a href="atlas.html">HOW</a>
+<a href="project.html">WHO</a>
+</div>
+</div>
+
+<main>
+<div class="full-width xl-text standard-margin top-header-margin">
+  <div style="position: relative">
+  FOUND IN FAST FASHION FACTORIES collects 6388 photos posted on Google Maps with the addresses
+  <div class="m-text d-flex justify-content-between col-3" style="position: absolute; right: 0; bottom: 0; color: blue" class="m-text">
+  <span>01</span><span>WHAT</span>
+</div></div>
+  <div>of 1000 garment factories around<br>the world. All the addresses were found <br>in the list of level 1 (tier 1) suppliers that have produced for MANGO in 2021.</div>
+</div>
+
+<div class="full-width d-flex gy-0">
+
+  <div class="col-6 standard-margin top-header-margin" style="position: relative">
+
+  <div class="d-flex xl-text justify-content-between col-12 align-self-start">
+  <div>INVISIBLE</div> <div style="color: #ededed">VALUES</div>
+  </div>
+
+  <div class="m-text" style="color: blue; text-align: right">02</div>
+
+  <div class="m-text col-11" style="position: absolute; bottom: var(--margin)">Since the 1990s, corporations have tended to dematerialise themselves, shifting their focus and investments from production to branding: from objects to ideas. Clients have started valuing the concept behind what they are buying more than the product itself. The physical aspect of the fashion industry ended up being submerged and invisible to the public eye.</div>
+  </div>
+
+  
+  <div class="col-6 standard-margin top-header-margin" style="background-color: #ededed; position: relative">
+  <div class="d-flex xl-text justify-content-between" style="position: relative; width: 100%"><div>INVISIBLE</div>
+  <div style="color: white">LABOUR</div></div>
+
+  <div class="m-text" style="color: blue;">WHY</div>
+
+  <div class="m-text col-11" style="position: absolute; bottom: var(--margin)">
+  Many companies switched their homeland production with contracted-out manufacturing, especially in low-income countries. In this way, they distanced themselves from their workforce, as they are not responsible for it anymore. This applies especially to fast fashion brands, which produce 100 billion garments per year.</div>
+  </div>
+</div>
+
+<div class="full-width d-flex gy-0">
+  <div class="d-inline-block col-9" data-scroll-speed="1">
+  <img src="./assets/img/frame 51.png">
+</div>
+    <div class="d-inline-block col-3" data-scroll-speed="100">
+    <img src="./assets/img/frame 52.png">
+  </div>
+</div>
+
+</main>
+
+
+<!-- JQUERY -->
+<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+<!-- <script>
+  $.fn.moveIt = function(){
+  var $window = $(window);
+  var instances = [];
+  
+  $(this).each(function(){
+    instances.push(new moveItItem($(this)));
+  });
+  
+  window.addEventListener('scroll', function(){
+    var scrollTop = $window.scrollTop();
+    instances.forEach(function(inst){
+      inst.update(scrollTop);
+    });
+  }, {passive: true});
+}
+
+var moveItItem = function(el){
+  this.el = $(el);
+  this.speed = parseInt(this.el.attr('data-scroll-speed'));
+};
+
+moveItItem.prototype.update = function(scrollTop){
+  this.el.css('transform', 'translateY(' + -(scrollTop / this.speed) + 'px)');
+};
+
+// Initialization
+$(function(){
+  $('[data-scroll-speed]').moveIt();
+});
+</script> -->
+
+</body>

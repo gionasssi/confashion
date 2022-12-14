@@ -23,105 +23,41 @@
 <body>
 
 <!-- HEADER -->
-<div id="header" class="d-flex justify-content-between m-text">
+<div id="header">
+<div class="d-flex justify-content-between m-text">
 <a href="index.html">FFFF</a>
 <a href="map.html">MAP</a>
 <a href="atlas.html">ATLAS</a>
 <a href="project.html">PROJECT</a>
 </div>
+</div>
 
 <!-- MARQUEE -->
 <marquee class="marquee" width="100%" behavior="scroll" class="s-text">
-      <p id="text-marquee">Silvia, rimembri ancora
-Quel tempo della tua vita mortale,
-Quando beltà splendea
-Negli occhi tuoi ridenti e fuggitivi,
-E tu, lieta e pensosa, il limitare            5
-Di gioventù salivi?
-
-Sonavan le quiete
-Stanze, e le vie dintorno,
-Al tuo perpetuo canto,
-Allor che all'opre femminili intenta        10
-Sedevi, assai contenta
-Di quel vago avvenir che in mente avevi.
-Era il maggio odoroso: e tu solevi
-Così menare il giorno.
-
-Io gli studi leggiadri                15
-Talor lasciando e le sudate carte,
-Ove il tempo mio primo
-E di me si spendea la miglior parte,
-D'in su i veroni del paterno ostello
-Porgea gli orecchi al suon della tua voce,    20
-Ed alla man veloce
-Che percorrea la faticosa tela.
-Mirava il ciel sereno,
-Le vie dorate e gli orti,
-E quinci il mar da lungi, e quindi il monte.    25
-Lingua mortal non dice
-Quel ch'io sentiva in seno.
-
-Che pensieri soavi,
-Che speranze, che cori, o Silvia mia!
-Quale allor ci apparia                30
-La vita umana e il fato!
-Quando sovviemmi di cotanta speme,
-Un affetto mi preme
-Acerbo e sconsolato,
-E tornami a doler di mia sventura.        35
-O natura, o natura,
-Perchè non rendi poi
-Quel che prometti allor? perchè di tanto
-Inganni i figli tuoi?
-
-Tu pria che l'erbe inaridisse il verno,        40
-Da chiuso morbo combattuta e vinta,
-Perivi, o tenerella. E non vedevi
-Il fior degli anni tuoi;
-Non ti molceva il core
-La dolce lode or delle negre chiome,        45
-Or degli sguardi innamorati e schivi;
-Nè teco le compagne ai dì festivi
-Ragionavan d'amore.
-
-Anche peria fra poco
-La speranza mia dolce: agli anni miei        50
-Anche negaro i fati
-La giovanezza. Ahi come,
-Come passata sei,
-Cara compagna dell'età mia nova,
-Mia lacrimata speme!                55
-Questo è quel mondo? questi
-I diletti, l'amor, l'opre, gli eventi
-Onde cotanto ragionammo insieme?
-Questa la sorte dell'umane genti?
-All'apparir del vero                    60
-Tu, misera, cadesti: e con la mano
-La fredda morte ed una tomba ignuda
-Mostravi di lontano.</p>
-</marquee>
+      <p id="text-marquee">Silvia, rimembri ancora Quel tempo della tua vita mortale, Quando beltà splendea Negli occhi tuoi ridenti e fuggitivi, E tu, lieta e pensosa, il limitare Di gioventù salivi?</marquee>
 
 <!-- MAIN -->
-<div class="full-width">
+<div id="scrollsnap">
+<div class="full-width scrolledsnap">
 <div class="xxl-text intro-text" style="bottom: 0;"><span style="text-decoration: underline">Found</span> in fast<br>fashion factories</div>
 </div>
 
-<div class="full-width">
+<div class="full-width scrolledsnap">
 <div class="xl-text intro-text" style="top: 0;">Fast fashion companies entrust their production to garment suppliers around the world.</div>
 </div>
 
-<div class="full-width">
+<div class="full-width scrolledsnap" style="text-align: center; b">
 <div class="xl-text intro-text" style="bottom: 0;">In the Google Maps location of these factories, people uploaded their photos.</div>
 </div>
 
 
-<div class="full-width" style="text-align: center">
+<div class="full-width scrolledsnap" style="text-align: center">
 <div class="xl-text intro-text" style="top: 0;">More than 6000 pictures were gathered from MANGO’s 1000 supplier factories’ addresses.</div>
-<div class="xl-text intro-hidden-text" style="bottom: 0; opacity: 0;">these photos have new stories to tell from the perspective of these places.</div>
+<div class="xl-text intro-hidden-text" style="bottom: 0; opacity: 0; color: white; mix-blend-mode: difference">these photos have new stories to tell from the perspective of these places.</div>
 </div>
 
-<div class="full-width" id="background-container" style="position: fixed; left: 0; top: 0; z-index: -10;"></div>
+<div class="full-width" id="background-container" style="position: fixed; left: 0; top: 0; z-index: -10; background-size: cover; background-repeat: no-repeat; background-position: center center;"></div>
+</div>
 
 <!-- SCRIPT -->
 <script>
@@ -129,29 +65,31 @@ var section = $('.intro-text');
 
 section.mouseover(function () {
   $(this).css("color", "white"); $("#header a").css("color", "white"); $("marquee").css("color", "white");
-  $(this).css("mix-blend-mode", "difference"); $("#header").css("mix-blend-mode", "difference"); $("marquee").css("mix-blend-mode", "difference");
+  $(this).css("mix-blend-mode", "difference");
+  $("#header").css("mix-blend-mode", "difference");
+  $("marquee").css("mix-blend-mode", "difference");
 
 
-  var index = $(this).parent().index() - 1;
-  var imagepath = "./assets/img/home" + index + ".gif"
+  var index = $(this).parent().index() + 1;
+  var imagepath = "url('./assets/img/home" + index + ".gif')"
 
-  $("#background-container").css("background-image", "url('https://mir-s3-cdn-cf.behance.net/project_modules/fs/7099fc28008799.56e41b31e770e.gif')");
-  $("#background-container").addClass("with-background");
-  // $(".full-width").css("background-image", imagepath);
+  // $("#background-container").css("background-image", "url('https://mir-s3-cdn-cf.behance.net/project_modules/fs/7099fc28008799.56e41b31e770e.gif')");
+  $("#background-container").css("background-image", imagepath);
+  // $("#background-container").css("background-image", "url('./assets/img/Mappa2.gif')");
 
   if (index == 4) {
    $(this).css("opacity", "0");
    $(".intro-hidden-text").css("opacity", "1");
-   // $(".intro-hidden-text").css("mix-blend-mode", "difference");
  }
 })
 
 
 section.mouseout(function() {
   $(this).css("color", "black"); $("#header a").css("color", "black"); $("marquee").css("color", "black");
-  $(this).css("mix-blend-mode", "initial"); $("#header").css("mix-blend-mode", "initial"); $("marquee").css("mix-blend-mode", "initial");
-  $("#background-container").removeClass("with-background");
-  $("#background-container").css("background", "none");
+  $(this).css("mix-blend-mode", "initial");
+  $("#header").css("mix-blend-mode", "initial");
+  $("marquee").css("mix-blend-mode", "initial");
+  $("#background-container").css("background-image", "none");
 
   $(this).css("opacity", "1");
   $(".intro-hidden-text").css("opacity", "0");
