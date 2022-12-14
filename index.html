@@ -19,7 +19,6 @@
 <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 </head>
 
-
 <body>
 
 <!-- HEADER -->
@@ -33,74 +32,44 @@
 </div>
 
 <!-- MARQUEE -->
-<marquee class="marquee" width="100%" behavior="scroll" class="s-text">
+<marquee class="marquee" behavior="scroll" class="s-text">
       <p id="text-marquee">Silvia, rimembri ancora Quel tempo della tua vita mortale, Quando beltà splendea Negli occhi tuoi ridenti e fuggitivi, E tu, lieta e pensosa, il limitare Di gioventù salivi?</marquee>
 
 <!-- MAIN -->
 <div id="scrollsnap">
 <div class="full-width scrolledsnap">
-<div class="xxl-text intro-text" style="bottom: 0;"><span style="text-decoration: underline">Found</span> in fast<br>fashion factories</div>
+<div class="xxl-text intro-text" style="position: absolute; bottom: 0;"><span style="text-decoration: underline">Found</span> in fast<br>fashion factories</div>
 </div>
 
 <div class="full-width scrolledsnap">
-<div class="xl-text intro-text" style="top: 0;">Fast fashion companies entrust their production to garment suppliers around the world.</div>
+<div class="xl-text intro-text">Fast fashion companies entrust their production to garment suppliers around the world.</div>
 </div>
 
 <div class="full-width scrolledsnap" style="text-align: center; b">
-<div class="xl-text intro-text" style="bottom: 0;">In the Google Maps location of these factories, people uploaded their photos.</div>
+<div class="xl-text intro-text" style="position: absolute; bottom: 0;">In the Google Maps location of these factories, people uploaded their photos.</div>
 </div>
 
 
 <div class="full-width scrolledsnap" style="text-align: center">
-<div class="xl-text intro-text" style="top: 0;">More than 6000 pictures were gathered from MANGO’s 1000 supplier factories’ addresses.</div>
-<div class="xl-text intro-hidden-text" style="bottom: 0; opacity: 0; color: white; mix-blend-mode: difference">these photos have new stories to tell from the perspective of these places.</div>
+<div class="xl-text intro-text">More than 6000 pictures were gathered from MANGO’s 1000 supplier factories’ addresses.</div>
+<div class="xl-text intro-hidden-text" style="position: absolute; bottom: 0; opacity: 0; color: white; mix-blend-mode: difference">these photos have new stories to tell from the perspective of these places.</div>
 </div>
 
-<div class="full-width" id="background-container" style="position: fixed; left: 0; top: 0; z-index: -10; background-size: cover; background-repeat: no-repeat; background-position: center center;"></div>
+<div class="full-width d-flex scrolledsnap gx-0" style="text-align: center">
+
+<div onclick="GoToMap()" class="d-inline-flex col-6 xl-text align-text-middle intro-text" id="hover-left" style="padding: 0; margin: 0">
+  <p class="align-self-center" style="width: 100%">MAP</p>
 </div>
 
-<!-- SCRIPT -->
-<script>
-var section = $('.intro-text');
+<div onclick="GoToAtlas()" class="d-inline-flex col-6 xl-text align-text-middle intro-text" id="hover-right" style="padding: 0; margin: 0">
+  <p class="align-self-center" style="width: 100%;">ATLAS</p>
+</div>
+</div>
 
-section.mouseover(function () {
-  $(this).css("color", "white"); $("#header a").css("color", "white"); $("marquee").css("color", "white");
-  $(this).css("mix-blend-mode", "difference");
-  $("#header").css("mix-blend-mode", "difference");
-  $("marquee").css("mix-blend-mode", "difference");
+<div class="full-width" id="bg-container" style="position: fixed; left: 0; top: 0; z-index: -10; background-size: cover; background-repeat: no-repeat; background-position: center center;"></div>
 
+</div>
 
-  var index = $(this).parent().index() + 1;
-  var imagepath = "url('./assets/img/home" + index + ".gif')"
-
-  // $("#background-container").css("background-image", "url('https://mir-s3-cdn-cf.behance.net/project_modules/fs/7099fc28008799.56e41b31e770e.gif')");
-  $("#background-container").css("background-image", imagepath);
-  // $("#background-container").css("background-image", "url('./assets/img/Mappa2.gif')");
-
-  if (index == 4) {
-   $(this).css("opacity", "0");
-   $(".intro-hidden-text").css("opacity", "1");
- }
-})
-
-
-section.mouseout(function() {
-  $(this).css("color", "black"); $("#header a").css("color", "black"); $("marquee").css("color", "black");
-  $(this).css("mix-blend-mode", "initial");
-  $("#header").css("mix-blend-mode", "initial");
-  $("marquee").css("mix-blend-mode", "initial");
-  $("#background-container").css("background-image", "none");
-
-  $(this).css("opacity", "1");
-  $(".intro-hidden-text").css("opacity", "0");
-})
-</script>
-
-
-<script>
-$( window ).load(function() {
-  $(window).scrollTop(0);
-});
-</script>
+<script src="./assets/script/homepage.js"></script>
 
 </body>

@@ -6,7 +6,7 @@
   padding: var(--top-margin) var(--margin) var(--margin) var(--margin);
   margin-top: 2vw;
   cursor: pointer;
-  position: absolute;
+  /* position: absolute; */
   text-transform: uppercase;
 }
 
