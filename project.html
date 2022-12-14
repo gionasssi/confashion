@@ -21,12 +21,12 @@
 <body></body>
 
 <!-- HEADER -->
-<!-- <div id="header">
+<div id="header">
 <div id="header-row-1" class="d-flex justify-content-between m-text">
 <a href="index.html">FFFF</a>
 <a href="map.html">MAP</a>
 <a href="atlas.html">ATLAS</a>
-<a href="project.html">PROJECT</a>
+<a href="project.html" style="color: blue">PROJECT</a>
 </div>
 <div id="header-row-2" class="d-flex justify-content-around m-text">
 <a href="index.html">WHAT</a>
@@ -34,10 +34,11 @@
 <a href="atlas.html">HOW</a>
 <a href="project.html">WHO</a>
 </div>
-</div> -->
+</div>
 
-<main>
-<!-- <div class="full-width xl-text standard-margin top-header-margin">
+<main id="scrollsnap">
+
+<div class="full-width xl-text scrolledsnap standard-margin top-header-margin">
   <div style="position: relative">
   FOUND IN FAST FASHION FACTORIES collects 6388 photos posted on Google Maps with the addresses
   <div class="m-text d-flex justify-content-between col-3" style="position: absolute; right: 0; bottom: 0; color: blue" class="m-text">
@@ -46,7 +47,7 @@
   <div>of 1000 garment factories around<br>the world. All the addresses were found <br>in the list of level 1 (tier 1) suppliers that have produced for MANGO in 2021.</div>
 </div>
 
-<div class="full-width d-flex gy-0">
+<div class="full-width d-flex gy-0 scrolledsnap">
 
   <div class="col-6 standard-margin top-header-margin" style="position: relative">
 
@@ -69,16 +70,16 @@
   <div class="m-text col-11" style="position: absolute; bottom: var(--margin)">
   Many companies switched their homeland production with contracted-out manufacturing, especially in low-income countries. In this way, they distanced themselves from their workforce, as they are not responsible for it anymore. This applies especially to fast fashion brands, which produce 100 billion garments per year.</div>
   </div>
-</div> -->
+</div>
 
-<div class="full-width d-flex gy-0">
+<!-- <div class="full-width d-flex gy-0">
   <div class="d-inline-block col-9" data-scroll-speed="1">
   <img src="./assets/img/frame 51.png">
 </div>
     <div class="d-inline-block col-3" data-scroll-speed="5000000">
     <img src="./assets/img/frame 52.png">
   </div>
-</div>
+</div> -->
 
 </main>
 
@@ -87,6 +88,10 @@
 <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 
 <script>
+$("body").scroll(function () {console.log("pappa")})
+</script>
+
+<!-- <script>
   $.fn.moveIt = function(){
   var $window = $(window);
   var instances = [];
@@ -116,6 +121,6 @@ moveItItem.prototype.update = function(scrollTop){
 $(function(){
   $('[data-scroll-speed]').moveIt();
 });
-</script>
+</script> -->
 
 </body>
