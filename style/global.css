@@ -80,7 +80,7 @@
 .m-text {font-size: var(--m-text); line-height: var(--m-lh)}
 .l-text {font-size: var(--l-text)}
 .xl-text {font-size: var(--xl-text); line-height: var(--xl-lh)}
-.xxl-text {font-size: var(--xxl-text); line-height: var(-xxl-lh)}
+.xxl-text {font-size: var(--xxl-text); line-height: var(--xxl-lh)}
 }
 
 
@@ -149,7 +149,7 @@ a:hover {
 
 #header img {
   height: 1.3vw;
-  transform:translate(0, -15%)
+  padding-bottom: 0.1vw;
 }
 
 #header a {
