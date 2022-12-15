@@ -10,11 +10,12 @@
   text-transform: uppercase;
 }
 
-marquee {
+#marquee {
   position: fixed;
   top: var(--top-margin);
   text-transform: uppercase;
   transform:translate(0, -8%);
+  width: 100%;
   z-index: 10;
 }
 
