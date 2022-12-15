@@ -127,9 +127,10 @@ color: black;
 text-decoration: none;
 }
 a:hover {
-  text-decoration: line-through;
-  color: black;
-  font-weight: 450;
+  color: blue;
+}
+a img:hover {
+  content: url('../assets/img/bluelogo.svg');
 }
 
 /* HEADER */

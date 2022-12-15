@@ -1,0 +1,25 @@
+.full-width {
+  position: relative;
+}
+
+.full-width div {
+  padding: var(--top-header-margin) var(--margin) var(--margin) var(--margin);
+  /* margin-top: 2vw; */
+  cursor: pointer;
+  /* position: absolute; */
+  text-transform: uppercase;
+}
+
+#marquee {
+  position: fixed;
+  top: var(--top-margin);
+  text-transform: uppercase;
+  transform:translate(0, -8%);
+  width: 100%;
+  z-index: 10;
+}
+
+
+body::-webkit-scrollbar {
+  display: none;
+}

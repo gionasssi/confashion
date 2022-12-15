@@ -16,8 +16,7 @@ section.mouseover(function () {
   var index = $(this).parent().index() + 1;
   var imagepath = "url('assets/img/home" + index + ".gif')"
 
-if (index < 4) {
-  console.log("per carità di dio")
+if (index < 5) {
   $(this).css("mix-blend-mode", "difference");
   $("#bg-container").css("background-image", imagepath);
  }
