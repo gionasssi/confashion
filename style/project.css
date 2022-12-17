@@ -1,3 +1,15 @@
 body::-webkit-scrollbar {
   display: none;
 }
+
+#how-sideleft {
+  overflow-y: scroll;
+}
+
+#how-sideleft::-webkit-scrollbar {
+  display: none
+}
+
+#how-sideleft img {
+  width: 100%
+}
