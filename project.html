@@ -29,10 +29,10 @@
 <a href="project.html" style="color: blue">PROJECT</a>
 </div>
 <div id="header-row-2" class="d-flex justify-content-around m-text">
-<a href="#what"  id="what-bm"style="color: blue">WHAT</a>
-<a href="#why" id="why-bm">WHY</a>
-<a href="#how" id="how-bm">HOW</a>
-<a href="#who" id="who-bm">WHO</a>
+<a id="what-bm" class="bm" style="color: blue">what</a>
+<a id="why-bm" class="bm">why</a>
+<a id="how-bm" class="bm">how</a>
+<a id="who-bm" class="bm">who</a>
 </div>
 </div>
 
@@ -124,82 +124,25 @@ of corporations to “dematerialise” themselves: since the 1990s, many started
 
 </div>
 
-<!-- <div class="full-width d-flex gy-0 scrolledsnap" id="how">
-
-  <div class="col-9 standard-margin top-header-margin" style="position: relative; overflow: scroll">
-
-  <div class="xl-text">
-    Silvia, rimembri ancora
-Quel tempo della tua vita mortale,
-Quando beltà splendea
-Negli occhi tuoi ridenti e fuggitivi,
-E tu, lieta e pensosa, il limitare 5
-Di gioventù salivi?
-Sonavan le quiete
-Stanze, e le vie dintorno,
-Al tuo perpetuo canto,
-Allor che all’opre femminili intenta 10
-Sedevi, assai contenta
-Di quel vago avvenir che in mente avevi.
-Era il maggio odoroso: e tu solevi
-Così menare il giorno.
-Io gli studi leggiadri 15
-Talor lasciando e le sudate carte,
-Ove il tempo mio primo
-E di me si spendea la miglior parte,
-D’in su i veroni del paterno ostello
-Porgea gli orecchi al suon della tua voce, 20
-Ed alla man veloce
-Che percorrea la faticosa tela.
-Mirava il ciel sereno,
-Le vie dorate e gli orti,
-E quinci il mar da lungi, e quindi il monte. 25
-Lingua mortal non dice
-Quel ch’io sentiva in seno.
-Che pensieri soavi,
-Che speranze, che cori, o Silvia mia!
-Quale allor ci apparia 30
-La vita umana e il fato!
-Quando sovviemmi di cotanta speme,
-Un affetto mi preme
-Acerbo e sconsolato,
-E tornami a doler di mia sventura. 35
-O natura, o natura,
-Perché non rendi poi
-Quel che prometti allor? perché di tanto
-Inganni i figli tuoi?
-Tu pria che l’erbe inaridisse il verno, 40
-Da chiuso morbo combattuta e vinta,
-Perivi, o tenerella. E non vedevi
-Il fior degli anni tuoi;
-Non ti molceva il core
-La dolce lode or delle negre chiome, 45
-Or degli sguardi innamorati e schivi;
-Né teco le compagne ai dì festivi
-Ragionavan d’amore.
-Anche peria fra poco
-La speranza mia dolce: agli anni miei 50
-Anche negaro i fati
-La giovanezza. Ahi come,
-Come passata sei,
-Cara compagna dell’età mia nova,
-Mia lacrimata speme! 55
-Questo è quel mondo? questi
-I diletti, l’amor, l’opre, gli eventi
-Onde cotanto ragionammo insieme?
-Questa la sorte dell’umane genti?
-All’apparir del vero 60
-Tu, misera, cadesti: e con la mano
-La fredda morte ed una tomba ignuda
-Mostravi di lontano.
+<!-- SEC. 4 WHO -->
+<div class="full-width scrolledsnap standard-margin top-header-margin" id = "who" style="background-color: black; color: white">
+  <div class="d-flex align-items-start justify-content-between">
+  <span class="m-text align-self-start" style="color: blue; transform:translate(0,-0.1vw); line-height:2.5vw">04<br>WHO </span><span class="xl-text">Found in Fast Fashion Factories</span>
   </div>
+  <div class="xl-text">is a website developed during for the <a href="https://densitydesign.github.io/teaching-dd18/">DensityDesign Lab Final Synthesis Studio</a> of the Master in Communication Design<br>at Politecnico di Milano. </div>
+
+<div class="d-flex m-text gy-0 align-items-end" style="width: 100%; position: absolute; bottom: var(--margin)">
+<div class="col-3"><a href="https://www.instagram.com/gionasssi/">Giovanni Bonassi</a><br>
+  <a href="https://www.instagram.com/martina_bracchi_/">Martina Bracchi</a><br>
+  <a href="https://www.instagram.com/cecilia.bnc">Cecilia Buonocunto</a><br>
+  <a href="https://www.csvslv.it/">Silvia Casavola</a><br>
+  <a href="https://www.instagram.com/laktryn/">Kateryna Lapshyna</a><br>
+  <a href="https://www.instagram.com/soregularvlada/">Vlada Ershiva</a><br>
+  <a href="https://iamvisi.altervista.org/">Matteo Visini</a></div>
+<div class="col-3">PROFESSORS<br><br>Michele Mauri<br>Simone Vantini<br>Gabriele Colombo<br>Angeles Briones<br>Salvatore Zingale</div>
+<div class="col-3">ASSISTANTS<br><br>Tommaso Elli<br>Andrea Benedetti<br>Elena Aversa<br>Arianna Bellantuono<br>Alessandra Facchin</div>
+<div class="col-3">Politecnico di Milano<br>Communication Design MSc<br>Final Synthesis Design Studio<br>sect. C3<br>DensityDesign Lab<br>18th Edition<br>A.Y. 2022/23</div>
 </div>
-
-  <div class="col-3 standard-margin top-header-margin" style="background-color: #ededed; position: relative">
-  I WISH I KNEW YOU WANTED ME
-  </div> -->
-
-<!-- </div> -->
 
 </main>
 
@@ -226,11 +169,26 @@ $("#why-bm").css("color", "blue")
 $("#why-bm").siblings().css("color", "black")
 }
 
-if ($("#scrollsnap").scrollTop() > pageheight*3) {
+if ($("#scrollsnap").scrollTop() > pageheight*2) {
+$("#how-bm").css("color", "blue")
+$("#how-bm").siblings().css("color", "black")
+  }
+
+if ($("#scrollsnap").scrollTop() > pageheight*4) {
 $("#how-bm").css("color", "blue")
 $("#how-bm").siblings().css("color", "black")
   }
 })
+
+$(".bm").click(function () {
+let destination = '#' + $(this).html();
+let offset = $(destination).offset();
+let offsetTop = offset.top;
+
+  // $(window).scrollTop(scrollTop)
+$("#scrollsnap").animate({scrollTop : offsetTop})
+})
+
 </script>
 
 </body>
