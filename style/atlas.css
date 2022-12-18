@@ -585,6 +585,7 @@ input[type=range]::-ms-thumb {
 
 .layout-icon {
   padding: var(--margin);
+  text-align: center;
 }
 
 /* #layout-icons #layout-geographic {
@@ -1166,7 +1167,7 @@ noscript {
 } */
 
 .modal-content {
-  height: 100%;
+  /* height: 100%; */
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -1229,9 +1230,9 @@ noscript {
 .modal-bottom-content {
   /* font-size: 12px;
   line-height: 18px; */
-  display: flex;
+  /* display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-between; */
 }
 
 .modal-bottom-content b {

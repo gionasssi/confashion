@@ -435,7 +435,7 @@
             <div class='layout-icon' id='layout-grid' hidden></div>
             <div class='layout-icon conditional' id='layout-date' hidden></div>
             <div class='layout-icon conditional' id='layout-categorical'>COUNTRY</div>
-            <div class='layout-icon conditional' id='layout-custom'></div>
+            <div class='layout-icon conditional' id='layout-custom' hidden></div>
           </div></div>
             <img id='settings-icon' src='assets/images/icons/gear-icon.svg' hidden/>
           </div>
@@ -534,22 +534,37 @@
 
         <div class='modal-bottom s-text' id='selected-image-meta'>
           <div class='modal-bottom-content'>
-            <div class='modal-text-left'>
-              <!-- <div id='image-title'><%- meta.filename ? decodeURIComponent(meta.filename) : decodeURIComponent(meta.src) %></div> -->
-              <span>COUNTRY:</span><br>
-              <span>CITY:</span><br>
-              <span>FACTORY:</span><br>
-              <span>ADDRESS:</span><br>
-              <span>LAT:</span><br>
-              <span>LON:</span><br>
+
+            <div class="d-flex gy-0 justify-content-between" style="width: 100%">
+              <div>COUNTRY</div>
+              <div style="text-align: right; max-width: 70%"><%= meta.category ? decodeURIComponent(meta.category) : '' %></div>
             </div>
-            <div class='modal-text-right'>
-              <span><%= meta.category ? decodeURIComponent(meta.category) : '' %></span><br>
-              <span><%= meta.city ? decodeURIComponent(meta.city) : '' %></span><br>
-              <span><%= meta.factory ? decodeURIComponent(meta.factory) : '' %></span><br>
-              <span><%= meta.address ? decodeURIComponent(meta.address) : '' %></span><br>
-              <span><%= meta.truelat ? decodeURIComponent(meta.truelat) : '' %></span><br>
-              <span><%= meta.truelng ? decodeURIComponent(meta.truelng) : '' %></span><br>
+
+            <div class="d-flex gy-0 justify-content-between" style="width: 100%">
+            <div>CITY</div>
+            <div style="text-align: right; max-width: 70%"><%= meta.city ? decodeURIComponent(meta.city) : '' %></div>
+          </div>
+
+            <div class="d-flex gy-0 justify-content-between" style="width: 100%">
+            <div>FACTORY</div>
+            <div style="text-align: right; max-width: 70%"><%= meta.factory ? decodeURIComponent(meta.factory) : '' %></div>
+          </div>
+
+            <div class="d-flex gy-0 justify-content-between" style="width: 100%">
+              <div>ADDRESS</div>
+            <div style="text-align: right; max-width: 70%"><%= meta.address ? decodeURIComponent(meta.address) : '' %></div>
+            </div>
+
+            <div class="d-flex gy-0 justify-content-between" style="width: 100%">
+              <div>LAT</div>
+            <div style="text-align: right; max-width: 70%"><%= meta.truelat ? decodeURIComponent(meta.truelat) : '' %></div>
+            </div>
+
+            <div class="d-flex gy-0 justify-content-between" style="width: 100%">
+              <div>LON</div>
+            <div style="text-align: right; max-width: 70%"><%= meta.truelng ? decodeURIComponent(meta.truelng) : '' %></div>
+            </div>
+            
               <!-- <% if (meta.category || meta.tags) { %>
                 <div id='meta-category-container'>
                   <% if (meta.category) { %>
