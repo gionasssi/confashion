@@ -51,9 +51,10 @@ if (index == 2) {
   $(this).parent().css("background-color", "var(--grey)");
 }
 
- if (index == 4) {
+ if (index > 3) {
 $(this).children().css("color", "black");
 $(this).children().css("mix-blend-mode", "initial");
+$(this).css("background-image", "none")
 }
 })
 
