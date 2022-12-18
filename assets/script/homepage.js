@@ -1,11 +1,10 @@
-// function GotoMap() { window.open('map.html') }
-// function GotoAtlas() { window.open('atlas.html') }
-
 $( document ).load(function() {
   $(window).scrollTop(0);
 })
 
 var section = $('.intro-text');
+
+console.log(section)
 
 section.mouseover(function () {
 
@@ -23,12 +22,10 @@ if (index < 3) {
    $("#img3").css("display", "block");
  }
 
- if (index == 5) {
    if ($(this).is("#hover-left")) {
      $(this).css("background-image", "url('assets/img/home5s.gif')");
    } else if ($(this).is("#hover-right")) {
      $(this).css("background-image", "url('assets/img/home5d.gif')");
-   }
 
    $(this).children().css("color", "white");
    $(this).children().css("mix-blend-mode", "difference");
@@ -39,7 +36,8 @@ if (index < 3) {
 
 
 section.mouseout(function() {
-  var index = $(this).parent().index() + 1;
+var index = $(this).parent().index() + 1;
+
 
 if (index < 3) {
   $(this).css("color", "black");
@@ -49,11 +47,11 @@ if (index < 3) {
 
   $("#img3").css("display", "none");
 
-if (index == 2 || index == 4) {
+if (index == 2) {
   $(this).parent().css("background-color", "var(--grey)");
 }
 
- if (index == 5) {
+ if (index == 4) {
 $(this).children().css("color", "black");
 $(this).children().css("mix-blend-mode", "initial");
 }
@@ -69,3 +67,7 @@ document.querySelectorAll('.js-marquee').forEach(function(e) {
         letter.after(clone);
     }
 })
+
+// HYPERLINKS
+$("#hover-left").click(function () {window.open('map.html')})
+$("#hover-right").click(function () {window.open('atlas.html')})

@@ -68,7 +68,7 @@
   --top-higher-margin: 7vw;
 
   /* FONT SIZES */
-  --s-text: 1.1vw; --m-lh: 1.2vw;
+  --s-text: 1.1vw; --s-lh: 1.3vw;
   --m-text: 1.6vw; --m-lh: 1.8vw;
   --l-text: 56px; --l-lh: 56px;
   --xl-text: 5.2vw; --xl-lh: 5.3vw;
@@ -126,10 +126,13 @@ a {
 color: black;
 text-decoration: none;
 }
+
 a:hover {
   color: blue;
 }
-a img:hover {
+
+#header a img:hover {
+  content:url("../assets/img/bluelogo.svg")
 }
 
 /* HEADER */
@@ -199,4 +202,17 @@ background-color: var(--grey);
 .scrolledsnap {
     scroll-snap-align: start;
     position:relative;
+}
+
+#footer a {
+  color: white
+}
+
+#footer a:hover {
+  color: blue;
+}
+
+#footer img {
+  height: 3vw;
+  margin: 0 var(--margin) var(--margin) 0;
 }
