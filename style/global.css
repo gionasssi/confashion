@@ -63,8 +63,8 @@
   :root {
   /* MARGINS */
   --margin: 0.9vw;
-  --top-margin: 3vw;;
-  --top-header-margin: 5vw;
+  --top-margin: 3vw;
+  --top-header-margin: 5.9vw;
   --top-higher-margin: 7vw;
 
   /* FONT SIZES */
@@ -130,7 +130,6 @@ a:hover {
   color: blue;
 }
 a img:hover {
-  content: url('../assets/img/bluelogo.svg');
 }
 
 /* HEADER */
@@ -143,19 +142,14 @@ a img:hover {
   text-transform: uppercase;
 }
 
-#header div {
-  /* padding: var(--margin); */
-  position: relative;
-  /* width: 100%; */
-}
+#header div { position: relative; }
 
 #header img {
   height: 1.3vw;
   padding-bottom: 0.1vw;
 }
 
-#header a {
-  /* border: solid; */
+#header a, .marquee span {
   line-height: 1.1vw;
   transform:translate(0, 15%)
 }
@@ -182,6 +176,10 @@ background-color: var(--grey);
 }
 
 .top-header-margin {
+  padding-top: var(--top-header-margin);
+}
+
+.top-higher-margin {
   padding-top: var(--top-higher-margin);
 }
 

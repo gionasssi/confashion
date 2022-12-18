@@ -12,12 +12,20 @@ section.mouseover(function () {
   var index = $(this).parent().index() + 1;
   var imagepath = "url('assets/img/home" + index + ".gif')"
 
-if (index < 4) {
+if (index < 3) {
   $(this).css("color", "white");
   $(this).css("mix-blend-mode", "difference");
   $(this).parent().css("background", "none");
   $("#bg-container").css("background-image", imagepath);
  }
+
+ if (index == 3) {
+   $("#img3").css("display", "block");
+ }
+//
+// if (index > 2 && index < 5) {
+//   $("#img" + index).css("display", "block");
+// }
 
  if (index == 5) {
    if ($(this).is("#hover-left")) {
@@ -30,18 +38,32 @@ if (index < 4) {
    $(this).siblings().css("background-image", "none")
    $(this).children().css("mix-blend-mode", "difference");
    }
-
-
-     console.log(index)
+     // console.log(index)
 })
 
 
 section.mouseout(function() {
+  var index = $(this).parent().index() + 1;
+
   $(this).css("color", "black"); $("#header a").css("color", "black"); $("marquee").css("color", "black");
   $(this).css("mix-blend-mode", "initial");
   $("#bg-container").css("background-image", "none");
 
-// if (index == 3) {
-//   $(this).parent().css("background-color", "var(--grey)");
-// }
+  $("#img3").css("display", "none");
+  // $("#img4").css("display", "none");
+
+if (index > 2 && index < 4) {
+  $(this).parent().css("background-color", "var(--grey)");
+}
+})
+
+
+// MARQUEE
+
+document.querySelectorAll('.js-marquee').forEach(function(e) {
+    var letter = e.querySelector('span');
+    for (counter = 1; counter <= 3; ++counter) {
+        var clone = letter.cloneNode(true);
+        letter.after(clone);
+    }
 })

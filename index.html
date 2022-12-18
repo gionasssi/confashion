@@ -30,10 +30,10 @@
 <a href="atlas.html">ATLAS</a>
 <a href="project.html" style="color: blue">PROJECT</a>
 </div>
-<div id="header-row-2" class="d-flex justify-content-around m-text standard-margin">
-  <marquee id="marquee" behavior="scroll">
-        <p id="text-marquee" class="s-text">Silvia, rimembri ancora Quel tempo della tua vita mortale, Quando beltà splendea Negli occhi tuoi ridenti e fuggitivi, E tu, lieta e pensosa, il limitare Di gioventù salivi?</p>
-  </marquee>
+<div id="header-row-2" class="marquee running js-marquee m-text standard-margin">
+<div class="marquee-inner">
+<span style="white-space: nowrap;">YOU'RE HERE: BANGLADESH LAT: 23.6241907 LNG: 90.4797296 &emsp; YOU'RE HERE: TURKEY LAT: 38.4819006 LNG: 27.0475492 &emsp; YOU'RE HERE: PAKISTAN LAT: 24.8370944 LNG: 67.1153212 &emsp; YOU'RE HERE: INDIA LAT: 12.6824796 LNG: 78.6167374 &emsp; YOU'RE HERE: VIETNAM LAT: 20.2609159 LNG: 105.7677106 &emsp; YOU'RE HERE: MOROCCO LAT: 35.7456162 LNG: -5.7830233 &emsp;</span>
+</div>
 </div>
 </div>
 
@@ -46,26 +46,33 @@
 
 <!-- MAIN -->
 <div id="scrollsnap">
+
+<!-- 1ST VIEWPORT -->
 <div class="full-width scrolledsnap">
 <div class="xxl-text intro-text" style="position: absolute; bottom: 0; transform:translate(-0.2vw, 5%)">
 Found in fast<br>fashion factories
-<img style="width: var(--xl-text); position: absolute; top: 0; right:var(--margin); transform:translate(0.1vw, 4.4vw)" src="assets/img/logo.svg">
+<img id="intro-logo" style="width: var(--xl-text); position: absolute; top: 0; right:var(--margin); transform:translate(0.1vw, 4.4vw)" src="assets/img/logo.svg">
 </div>
 </div>
 
+<!-- 2ND VIEWPORT -->
 <div class="full-width scrolledsnap d-flex align-items-center" style="text-align: center; background-color: var(--grey)">
 <div class="d-inline-block xl-text intro-text" style="padding: 0; width: 100%">Fast fashion companies entrust<br>their production to garment<br>suppliers around the world.</div>
 </div>
 
-<div class="full-width scrolledsnap">
+<!-- 3RD VIEWPORT -->
+<div class="full-width scrolledsnap"  style="background-color: var(--grey)">
 <div class="xl-text intro-text" style="position: absolute; bottom: 0; width: 90%">Some of these companies share their suppliers list. Searching them on Google Maps, it turns out that people uploaded their photos.</div>
+<img src="assets/img/home4.png" id="img3" style="position: absolute; margin 0; padding: 0; left 0; top: 0; width: 100%; height: 100%; object-fit: contain;  display: none">
 </div>
 
-
-<div class="full-width scrolledsnap" style="background-color: var(--grey)">
-<div class="xl-text intro-text">More than 6000 pictures were gathered from Mango’s factories’ locations.<br>New stories from the perspective of these places are told through these photos.<br><p style="width: 100%; text-align: right">Found in Fast Fashion Factories</p></div>
+<!-- 4TH VIEWPORT -->
+<div class="full-width scrolledsnap" style="background-color: var(--grey); overflow: hidden">
+<div class="xl-text intro-text">More than 6000 pictures were gathered from Mango’s factories’ locations.<br>New stories from the perspective of these places are told through these photos<br><p style="width: 100%; text-align: right">Found in Fast Fashion Factories</p></div>
+<img src="assets/img/whitelogo.svg" id="img4" style="position: absolute; margin 0; padding: 0; left: -0.5vw; top: var(--top-header-margin); bottom: 0; width: 101vw; object-fit: contain; mix-blend-mode: difference;">
 </div>
 
+<!-- 5TH VIEWPORT -->
 <div class="full-width d-flex scrolledsnap gx-0" style="text-align: center">
 
 <div onclick="GoToMap()" class="d-inline-flex col-6 xl-text intro-text" id="hover-left" style="padding: 0; margin: 0">
