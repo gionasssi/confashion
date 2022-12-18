@@ -68,17 +68,17 @@
   --top-higher-margin: 7vw;
 
   /* FONT SIZES */
-  --s-text: 1.1vw;
+  --s-text: 1.1vw; --m-lh: 1.2vw;
   --m-text: 1.6vw; --m-lh: 1.8vw;
   --l-text: 56px; --l-lh: 56px;
   --xl-text: 5.2vw; --xl-lh: 5.5vw;
-  --xxl-text: 9.7vw; --xxl-lh: 9.9vw;
+  --xxl-text: 13vw; --xxl-lh: 16vw;
   }
 
 /* DESKTOP FONT SIZES */
-.s-text {font-size: var(--s-text)}
+.s-text {font-size: var(--s-text); line-height: var(--s-lh)}
 .m-text {font-size: var(--m-text); line-height: var(--m-lh)}
-.l-text {font-size: var(--l-text)}
+.l-text {font-size: var(--l-text); line-height: var(--l-lh)}
 .xl-text {font-size: var(--xl-text); line-height: var(--xl-lh)}
 .xxl-text {font-size: var(--xxl-text); line-height: var(--xxl-lh)}
 }
