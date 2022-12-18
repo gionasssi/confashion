@@ -588,6 +588,11 @@ input[type=range]::-ms-thumb {
   text-align: center;
 }
 
+#layout-icons .active {
+  color:blue
+} 
+
+
 /* #layout-icons #layout-geographic {
   height: 32px;
   position: relative;
