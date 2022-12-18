@@ -72,7 +72,7 @@
   --m-text: 1.6vw; --m-lh: 1.8vw;
   --l-text: 56px; --l-lh: 56px;
   --xl-text: 5.2vw; --xl-lh: 5.5vw;
-  --xxl-text: 13vw; --xxl-lh: 16vw;
+  --xxl-text: 13.2vw; --xxl-lh: 11vw;
   }
 
 /* DESKTOP FONT SIZES */
@@ -144,9 +144,9 @@ a img:hover {
 }
 
 #header div {
-  padding: var(--margin);
+  /* padding: var(--margin); */
   position: relative;
-  width: 100%;
+  /* width: 100%; */
 }
 
 #header img {

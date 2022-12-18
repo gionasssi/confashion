@@ -9,9 +9,7 @@ var section = $('.intro-text');
 
 section.mouseover(function () {
 
-  $(this).css("color", "white"); $("#header a").css("color", "white"); $("marquee").css("color", "white");
-  $("#header").css("mix-blend-mode", "difference");
-  $("marquee").css("mix-blend-mode", "difference");
+  $(this).css("color", "white");
 
   var index = $(this).parent().index() + 1;
   var imagepath = "url('assets/img/home" + index + ".gif')"
@@ -42,8 +40,6 @@ if (index < 5) {
 section.mouseout(function() {
   $(this).css("color", "black"); $("#header a").css("color", "black"); $("marquee").css("color", "black");
   $(this).css("mix-blend-mode", "initial");
-  $("#header").css("mix-blend-mode", "initial");
-  $("marquee").css("mix-blend-mode", "initial");
   $("#bg-container").css("background-image", "none");
 
   $(this).css("opacity", "1");
