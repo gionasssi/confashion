@@ -22,38 +22,40 @@ if (index < 3) {
  if (index == 3) {
    $("#img3").css("display", "block");
  }
-//
-// if (index > 2 && index < 5) {
-//   $("#img" + index).css("display", "block");
-// }
 
  if (index == 5) {
    if ($(this).is("#hover-left")) {
-     $(this).css("background-image", "url('assets/img/home1.gif')");
+     $(this).css("background-image", "url('assets/img/home5s.gif')");
    } else if ($(this).is("#hover-right")) {
-     $(this).css("background-image", "url('assets/img/home2.gif')");
+     $(this).css("background-image", "url('assets/img/home5d.gif')");
    }
 
-   $(this).css("color", "white");
-   $(this).siblings().css("background-image", "none")
+   $(this).children().css("color", "white");
    $(this).children().css("mix-blend-mode", "difference");
+   $(this).siblings().css("background-image", "none")
+   $(this).siblings().css("color", "black")
    }
-     // console.log(index)
 })
 
 
 section.mouseout(function() {
   var index = $(this).parent().index() + 1;
 
-  $(this).css("color", "black"); $("#header a").css("color", "black"); $("marquee").css("color", "black");
+if (index < 3) {
+  $(this).css("color", "black");
   $(this).css("mix-blend-mode", "initial");
   $("#bg-container").css("background-image", "none");
+}
 
   $("#img3").css("display", "none");
-  // $("#img4").css("display", "none");
 
-if (index > 2 && index < 4) {
+if (index == 2 || index == 4) {
   $(this).parent().css("background-color", "var(--grey)");
+}
+
+ if (index == 5) {
+$(this).children().css("color", "black");
+$(this).children().css("mix-blend-mode", "initial");
 }
 })
 
