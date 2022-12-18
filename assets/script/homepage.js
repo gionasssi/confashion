@@ -9,19 +9,14 @@ var section = $('.intro-text');
 
 section.mouseover(function () {
 
-  $(this).css("color", "white");
-
   var index = $(this).parent().index() + 1;
   var imagepath = "url('assets/img/home" + index + ".gif')"
 
-if (index < 5) {
+if (index < 4) {
+  $(this).css("color", "white");
   $(this).css("mix-blend-mode", "difference");
+  $(this).parent().css("background", "none");
   $("#bg-container").css("background-image", imagepath);
- }
-
-  if (index == 4) {
-   $(this).css("opacity", "0");
-   $(".intro-hidden-text").css("opacity", "1");
  }
 
  if (index == 5) {
@@ -31,9 +26,13 @@ if (index < 5) {
      $(this).css("background-image", "url('assets/img/home2.gif')");
    }
 
+   $(this).css("color", "white");
    $(this).siblings().css("background-image", "none")
    $(this).children().css("mix-blend-mode", "difference");
    }
+
+
+     console.log(index)
 })
 
 
@@ -42,6 +41,7 @@ section.mouseout(function() {
   $(this).css("mix-blend-mode", "initial");
   $("#bg-container").css("background-image", "none");
 
-  $(this).css("opacity", "1");
-  $(".intro-hidden-text").css("opacity", "0");
+// if (index == 3) {
+//   $(this).parent().css("background-color", "var(--grey)");
+// }
 })
