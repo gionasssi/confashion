@@ -72,7 +72,7 @@
   --m-text: 1.6vw; --m-lh: 1.8vw;
   --l-text: 56px; --l-lh: 56px;
   --xl-text: 5.2vw; --xl-lh: 5.5vw;
-  --xxl-text: 9.7vw; --xxl-lh: 10vw;
+  --xxl-text: 9.7vw; --xxl-lh: 9.9vw;
   }
 
 /* DESKTOP FONT SIZES */
@@ -140,6 +140,7 @@ a img:hover {
   width: 100%;
   top: 0;
   left: 0;
+  text-transform: uppercase;
 }
 
 #header div {
