@@ -63,14 +63,14 @@ function Config() {
     points: { // the follow values are set by Data()
       min: 0, // min point size
       max: 0, // max point size
-      initial: 50, // initial point size
+      initial: 0, // initial point size
       grid: 0, // initial point size for grid layouts
       scatter: 0, // initial point size for scatter layouts
       date: 0, // initial point size for date layouts
     },
   }
   this.transitions = {
-    duration: 2.0,
+    duration: 1.0,
     delay: 0.0,
     ease: {
       value: 1,
@@ -150,7 +150,7 @@ Data.prototype.parseManifest = function(json) {
   config.size.lodCell = json.config.sizes.lod;
   config.size.points = json.point_sizes;
   // update the point size DOM element
-  world.elems.pointSize.min = 0;
+  world.elems.pointSize.min = 0.006;
   world.elems.pointSize.max = config.size.points.max;
   world.elems.pointSize.value = config.size.points.initial / window.devicePixelRatio;
   // set number of atlases and textures
@@ -521,7 +521,7 @@ Cell.prototype.setBuffer = function(attr) {
 **/
 
 function Layout() {
-  this.jitterElem = true;
+  this.jitterElem = null;
   this.selected = null;
   this.options = [];
     this.elems = {
@@ -550,6 +550,7 @@ Layout.prototype.init = function(options) {
   this.initializeMobileLayoutOptions();
   this.initializeUmapInputs();
   this.showHideIcons();
+  this.showHideJitter();
   this.showHideUmapInputs();
   this.addEventListeners();
   this.selectActiveIcon();
@@ -660,7 +661,18 @@ Layout.prototype.addEventListeners = function() {
     this.set(e.target.id.replace('layout-', ''), true);
   }.bind(this));
   // allow clicks on jitter container to update jitter state
-  this.elems.input.checked = true;
+  this.elems.jitter.addEventListener('click', function(e) {
+    if (e.target.tagName != 'INPUT') {
+      if (this.elems.input.checked) {
+        this.elems.input.checked = false;
+        this.elems.jitter.classList.remove('visible');
+      } else {
+        this.elems.input.checked = true;
+        this.elems.jitter.classList.add('visible');
+      }
+    }
+    this.set(this.selected, false);
+  }.bind(this));
   // change the layout when the mobile select changes
   this.elems.layoutSelect.addEventListener('change', function(e) {
     this.set(e.target.value);
@@ -695,7 +707,7 @@ Layout.prototype.set = function(layout, enableDelay) {
   // show or hide any contextual elements (e.g. geographic shapes)
   this.showHideContext();
   // enable the jitter button if this layout has a jittered option
-
+  this.showHideJitter();
   // show or hide the umap parameter inputs
   this.showHideUmapInputs();
   // zoom the user out if they're zoomed in
@@ -756,6 +768,15 @@ Layout.prototype.setPointScalar = function() {
     var scale = world.getPointScale();
     world.setUniform('targetScale', scale);
   }
+}
+
+// show/hide the jitter and return a bool whether to jitter the new layout
+Layout.prototype.showHideJitter = function() {
+  this.getJitterable()
+    ? world.state.transitioning
+      ? this.elems.jitter.classList.add('visible', 'disabled')
+      : this.elems.jitter.classList.add('visible')
+    : this.elems.jitter.classList.remove('visible')
 }
 
 // return a bool indicating if the layout is jittered
@@ -861,7 +882,7 @@ function World() {
 
 World.prototype.getScene = function() {
   var scene = new THREE.Scene();
-  scene.background = new THREE.Color("#ffffff");
+  scene.background = new THREE.Color("#ededed");
   return scene;
 }
 
@@ -880,7 +901,7 @@ World.prototype.getScene = function() {
 World.prototype.getCamera = function() {
   var canvasSize = getCanvasSize();
   var aspectRatio = canvasSize.w /canvasSize.h;
-  return new THREE.PerspectiveCamera(50, aspectRatio, 0.001, 10);
+  return new THREE.PerspectiveCamera(65, aspectRatio, 0.001, 10);
 }
 
 /**
@@ -912,14 +933,14 @@ World.prototype.getControls = function() {
     return controls;
   }
   var controls = new THREE.TrackballControls(this.camera, this.canvas);
-  controls.zoomSpeed = 1;
+  controls.zoomSpeed = 0.2;
   controls.panSpeed = 0.4;
   controls.noRotate = true;
   controls.mouseButtons.LEFT = THREE.MOUSE.PAN;
   controls.mouseButtons.MIDDLE = THREE.MOUSE.ZOOM;
   controls.mouseButtons.RIGHT = THREE.MOUSE.ROTATE;
+  controls.minDistance = 0.05;
   controls.maxDistance = 3.0;
-  controls.minDistance = 0.03;
   controls.type = 'trackball';
   return controls;
 }
@@ -2221,7 +2242,7 @@ ConvexHullGrahamScan.prototype = {
 
 function Picker() {
   this.scene = new THREE.Scene();
-  this.scene.background = new THREE.Color("#ffffff");
+  this.scene.background = new THREE.Color(0x000000);
   this.mouseDown = new THREE.Vector2();
   this.tex = this.getTexture();
 }
@@ -2447,7 +2468,7 @@ Text.prototype.getTexture = function() {
   canvas.id = 'character-canvas';
   ctx.font = this.point + 'px Monospace';
   // give the canvas a black background for pixel discarding
-  ctx.fillStyle = '#ffffff';
+  ctx.fillStyle = '#000000';
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   ctx.fillStyle = '#ffffff';
   // draw the letters on the canvas
@@ -2573,7 +2594,7 @@ function Modal() {
 
 Modal.prototype.showCells = function(cellIndices, cellIdx) {
   var self = this;
-  // settings.close();
+  settings.close();
   self.state.displayed = true;
   self.cellIndices = Object.assign([], cellIndices);
   self.cellIdx = !isNaN(parseInt(cellIdx)) ? parseInt(cellIdx) : 0;
@@ -2964,7 +2985,7 @@ function Filter(obj) {
   this.desktopSelect.className = 'filter';
   var label = document.createElement('div');
   label.className = 'settings-label filter-label';
-  label.textContent = 'Category';
+  label.textContent = 'FILTER BY COUNTRY';
   this.desktopSelect.appendChild(label);
   // create the mobile filter's select
   this.mobileSelect = document.createElement('select');
@@ -3077,36 +3098,36 @@ Filter.prototype.filterImages = function() {
 * Settings
 **/
 
-// function Settings() {
-//   this.elems = {
-//     tray: document.querySelector('#header-controls-bottom'),
-//     icon: document.querySelector('#settings-icon'),
-//   }
-//   this.state = {
-//     open: false,
-//   }
-//   this.elems.icon.addEventListener('click', this.toggleOpen.bind(this));
-// }
+function Settings() {
+  this.elems = {
+    tray: document.querySelector('#header-controls-bottom'),
+    icon: document.querySelector('#settings-icon'),
+  }
+  this.state = {
+    open: false,
+  }
+  this.elems.icon.addEventListener('click', this.toggleOpen.bind(this));
+}
 
-// Settings.prototype.open = function() {
-//   this.state.open = true;
-//   this.elems.tray.classList.add('open');
-//   this.elems.icon.classList.add('no-tooltip');
-//   this.elems.icon.classList.add('active');
-//   tooltip.hide();
-// }
+Settings.prototype.open = function() {
+  this.state.open = true;
+  this.elems.tray.classList.add('open');
+  this.elems.icon.classList.add('no-tooltip');
+  this.elems.icon.classList.add('active');
+  tooltip.hide();
+}
 
-// Settings.prototype.close = function() {
-//   this.state.open = false;
-//   this.elems.tray.classList.remove('open');
-//   this.elems.icon.classList.remove('no-tooltip');
-//   this.elems.icon.classList.remove('active');
-// }
+Settings.prototype.close = function() {
+  this.state.open = false;
+  this.elems.tray.classList.remove('open');
+  this.elems.icon.classList.remove('no-tooltip');
+  this.elems.icon.classList.remove('active');
+}
 
-// Settings.prototype.toggleOpen = function() {
-//   if (this.state.open) this.close();
-//   else this.open();
-// }
+Settings.prototype.toggleOpen = function() {
+  if (this.state.open) this.close();
+  else this.open();
+}
 
 /**
 * Search
@@ -3239,7 +3260,7 @@ Hotspots.prototype.render = function() {
     // show the number of cells in this hotspot's cluster
     hotspots[i].querySelector('.hotspot-bar-inner').style.width = (100 * this.json[i].images.length / data.cells.length) + '%';
     // add hotspot event listeners each time they are re-rendered
-    hotspots[i].querySelector('.hotspot-image').addEventListener('click', function(idx) {
+    hotspots[i].querySelector('.hotspot-label').addEventListener('click', function(idx) {
       world.flyToCellImage(this.json[idx].img);
     }.bind(this, i));
     // show the convex hull of a cluster on mouse enter
@@ -3414,7 +3435,7 @@ Globe.prototype.load = function() {
     parentGeometry.merge(mesh.geometry, mesh.matrix);
   }
 
-  get(getPath('assets/json/flat-continents.json'), function(json) {
+  get(getPath('assets/json/flat-continents2.json'), function(json) {
     json.forEach(addShape.bind(this, self.globeGeometry));
     var material = new THREE.MeshBasicMaterial({
       color: 0x333333,
@@ -3521,7 +3542,54 @@ Keyboard.prototype.commandPressed = function() {
 * Show/hide tooltips for user-facing controls
 **/
 
+function Tooltip() {
+  this.elem = document.querySelector('#tooltip');
+  this.targets = [
+    {
+      elem: document.querySelector('#layout-alphabetic'),
+      text: 'Order images alphabetically by filename',
+    },
+    {
+      elem: document.querySelector('#layout-umap'),
+      text: 'Cluster images via UMAP dimensionality reduction',
+    },
+    {
+      elem: document.querySelector('#layout-grid'),
+      text: 'Represent UMAP clusters on a grid',
+    },
+    {
+      elem: document.querySelector('#layout-date'),
+      text: 'Order images by date',
+    },
+    {
+      elem: document.querySelector('#layout-categorical'),
+      text: 'Arrange images into metadata groups',
+    },
+    {
+      elem: document.querySelector('#layout-geographic'),
+      text: 'Arrange images using lat/lng coordinates',
+    },
+    {
+      elem: document.querySelector('#settings-icon'),
+      text: 'Configure plot settings',
+    },
+  ];
+  this.targets.forEach(function(i) {
+    i.elem.addEventListener('mouseenter', function(e) {
+      if (e.target.classList.contains('no-tooltip')) return;
+      var offsets = i.elem.getBoundingClientRect();
+      this.elem.textContent = i.text;
+      this.elem.style.position = 'absolute';
+      this.elem.style.left = (offsets.left + i.elem.clientWidth - this.elem.clientWidth + 9) + 'px';
+      this.elem.style.top = (offsets.top + i.elem.clientHeight + 16) + 'px';
+    }.bind(this));
+    i.elem.addEventListener('mouseleave', this.hide.bind(this))
+  }.bind(this));
+}
 
+Tooltip.prototype.hide = function() {
+  this.elem.style.top = '-10000px';
+}
 
 /**
 * Handle load progress and welcome scene events
@@ -3549,7 +3617,7 @@ Welcome.prototype.removeLoader = function(onSuccess) {
   var blocks = document.querySelectorAll('.block');
   for (var i=0; i<blocks.length; i++) {
     setTimeout(function(i) {
-      blocks[i].style.animation = 'exit 100s';
+      blocks[i].style.animation = 'exit 300s';
       setTimeout(function(i) {
         blocks[i].parentNode.removeChild(blocks[i]);
         if (i == blocks.length-1) onSuccess();
@@ -3557,6 +3625,7 @@ Welcome.prototype.removeLoader = function(onSuccess) {
     }.bind(this, i), i*100)
   }
   document.querySelector('#progress').style.opacity = 0;
+  document.querySelector('#clicktoenter').style.opacity = 0;
 }
 
 Welcome.prototype.updateProgress = function() {
@@ -3566,7 +3635,7 @@ Welcome.prototype.updateProgress = function() {
   var index = progress.indexOf('.');
   if (index > -1) progress = progress.substring(0, index);
   // display the load progress
-  this.progressElem.textContent = progress + '%';
+  this.progressElem.textContent = 'ATLAS ' + progress + '%';
   if (progress == 100 &&
       data.loadedTextures == data.textureCount &&
       world.heightmap) {
@@ -4140,7 +4209,8 @@ var world = new World();
 var text = new Text();
 var dates = new Dates();
 var lod = new LOD();
-// var settings = new Settings();
+var settings = new Settings();
+var tooltip = new Tooltip();
 var globe = new Globe();
 var data = new Data();
 var attractmode = new AttractMode();
