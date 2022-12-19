@@ -3638,7 +3638,7 @@ Welcome.prototype.startWorld = function(onSuccess) {
     dates.init();
     setTimeout(function() {
       requestAnimationFrame(function() {
-        document.querySelector('#loader-scene').classList += 'hidden';
+        document.querySelector('#loader-scene').classList.add('hidden');
         document.querySelector('#header-controls').style.opacity = 1;
       })
     }, 1500)
