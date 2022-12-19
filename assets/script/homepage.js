@@ -68,5 +68,5 @@ document.querySelectorAll('.js-marquee').forEach(function(e) {
 })
 
 // HYPERLINKS
-$("#hover-left").click(function () {window.open('map.html')})
-$("#hover-right").click(function () {window.open('atlas.html')})
+$("#hover-left").click(function () {window.open('map.html', "_self")})
+$("#hover-right").click(function () {window.open('atlas.html', "_self")})
