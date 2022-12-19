@@ -882,7 +882,7 @@ function World() {
 
 World.prototype.getScene = function() {
   var scene = new THREE.Scene();
-  scene.background = new THREE.Color("#000000");
+  scene.background = new THREE.Color("#ededed");
   return scene;
 }
 
@@ -901,7 +901,7 @@ World.prototype.getScene = function() {
 World.prototype.getCamera = function() {
   var canvasSize = getCanvasSize();
   var aspectRatio = canvasSize.w /canvasSize.h;
-  return new THREE.PerspectiveCamera(75, aspectRatio, 0.001, 10);
+  return new THREE.PerspectiveCamera(65, aspectRatio, 0.001, 10);
 }
 
 /**
@@ -939,7 +939,7 @@ World.prototype.getControls = function() {
   controls.mouseButtons.LEFT = THREE.MOUSE.PAN;
   controls.mouseButtons.MIDDLE = THREE.MOUSE.ZOOM;
   controls.mouseButtons.RIGHT = THREE.MOUSE.ROTATE;
-  controls.minDistance = 0.003;
+  controls.minDistance = 0.05;
   controls.maxDistance = 3.0;
   controls.type = 'trackball';
   return controls;
@@ -1186,6 +1186,7 @@ World.prototype.getGroupAttributes = function(cells) {
     it.height[it.heightIterator++] = cell.h; // px height of cell in lod atlas
     it.offset[it.offsetIterator++] = cell.dx; // px offset of cell from left of tex
     it.offset[it.offsetIterator++] = cell.dy; // px offset of cell from top of tex
+    
   }
 
   var positions = new Float32Array([
@@ -2468,7 +2469,7 @@ Text.prototype.getTexture = function() {
   canvas.id = 'character-canvas';
   ctx.font = this.point + 'px Monospace';
   // give the canvas a black background for pixel discarding
-  ctx.fillStyle = '#000000';
+  ctx.fillStyle = '#ffffff';
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   ctx.fillStyle = '#ffffff';
   // draw the letters on the canvas
@@ -3435,7 +3436,7 @@ Globe.prototype.load = function() {
     parentGeometry.merge(mesh.geometry, mesh.matrix);
   }
 
-  get(getPath('assets/json/flat-continents2.json'), function(json) {
+  get(getPath('assets/json/flat-continents.json'), function(json) {
     json.forEach(addShape.bind(this, self.globeGeometry));
     var material = new THREE.MeshBasicMaterial({
       color: 0x333333,
@@ -3606,27 +3607,13 @@ function Welcome() {
 Welcome.prototype.onButtonClick = function(e) {
   if (e.target.className.indexOf('active') > -1) {
     requestAnimationFrame(function() {
-      this.removeLoader(function() {
-        this.startWorld();
+      this.startWorld(function() {
+        this.removeLoader();
       }.bind(this));
     }.bind(this));
   }
 }
 
-Welcome.prototype.removeLoader = function(onSuccess) {
-  var blocks = document.querySelectorAll('.block');
-  for (var i=0; i<blocks.length; i++) {
-    setTimeout(function(i) {
-      blocks[i].style.animation = 'exit 300s';
-      setTimeout(function(i) {
-        blocks[i].parentNode.removeChild(blocks[i]);
-        if (i == blocks.length-1) onSuccess();
-      }.bind(this, i), 1000)
-    }.bind(this, i), i*100)
-  }
-  document.querySelector('#progress').style.opacity = 0;
-  document.querySelector('#clicktoenter').style.opacity = 0;
-}
 
 Welcome.prototype.updateProgress = function() {
   var progress = valueSum(data.textureProgress) / data.textureCount;
@@ -3643,7 +3630,7 @@ Welcome.prototype.updateProgress = function() {
   }
 }
 
-Welcome.prototype.startWorld = function() {
+Welcome.prototype.startWorld = function(onSuccess) {
   requestAnimationFrame(function() {
     world.init();
     picker.init();
@@ -3651,11 +3638,27 @@ Welcome.prototype.startWorld = function() {
     dates.init();
     setTimeout(function() {
       requestAnimationFrame(function() {
-        document.querySelector('#loader-scene').classList += 'hidden';
+        document.querySelector('#loader-scene').classList.add('hidden');
         document.querySelector('#header-controls').style.opacity = 1;
       })
     }, 1500)
   }.bind(this))
+}
+
+
+Welcome.prototype.removeLoader = function() {
+  var blocks = document.querySelectorAll('.block');
+  for (var i=0; i<blocks.length; i++) {
+    setTimeout(function(i) {
+      blocks[i].style.animation = 'exit 300s';
+      setTimeout(function(i) {
+        blocks[i].parentNode.removeChild(blocks[i]);
+        if (i == blocks.length-1) onSuccess();
+      }.bind(this, i), 1000)
+    }.bind(this, i), i*100)
+  }
+  document.querySelector('#progress').style.opacity = 0;
+  document.querySelector('#clicktoenter').style.opacity = 0;
 }
 
 /**
