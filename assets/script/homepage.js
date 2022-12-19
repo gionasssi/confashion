@@ -4,8 +4,6 @@ $( document ).load(function() {
 
 var section = $('.intro-text');
 
-console.log(section)
-
 section.mouseover(function () {
 
   var index = $(this).parent().index() + 1;

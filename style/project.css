@@ -4,6 +4,7 @@ body::-webkit-scrollbar {
 
 #how-sideleft {
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 #how-sideleft::-webkit-scrollbar {
@@ -24,4 +25,16 @@ body::-webkit-scrollbar {
 
 .bm {
   cursor: pointer;
+}
+
+bm:hover {
+  color: blue;
+}
+
+#how-sideleft .row {
+  margin-top: 5vh;
+}
+
+.bm-active {
+  color: blue
 }

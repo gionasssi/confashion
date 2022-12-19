@@ -23,16 +23,16 @@
 <!-- HEADER -->
 <div id="header">
 <div id="header-row-1" class="d-flex justify-content-between m-text standard-margin">
-<a href="index.html" style="transform: none"><img src="assets/img/logo.svg"></a>
+<a href="index.html" style="transform: none"><img src="assets/img/logo.svg" id="header-logo"></a>
 <a href="map.html">MAP</a>
 <a href="atlas.html">ATLAS</a>
 <a href="project.html" style="color: blue">PROJECT</a>
 </div>
 <div id="header-row-2" class="d-flex justify-content-around m-text standard-margin">
-<a id="what-bm" class="bm" style="color: blue">what</a>
-<a id="why-bm" class="bm">why</a>
-<a id="how-bm" class="bm">how</a>
-<a id="who-bm" class="bm">who</a>
+<a id="what-bm" href="what.html" class="bm bm-active">what</a>
+<a id="why-bm" href="why.html" class="bm">why</a>
+<a id="how-bm" href="how.html" class="bm">how</a>
+<a id="who-bm" href="who.html" class="bm">who</a>
 </div>
 </div>
 
@@ -44,22 +44,22 @@
   <div class="d-flex align-items-start justify-content-between">
   <span class="m-text align-self-start" style="color: blue; transform:translate(0,-0.1vw); line-height:2.5vw">01<br>WHAT </span><span class="xl-text">Found in Fast Fashion Factories</span>
   </div>
-  <div class="xl-text">collects 6388 photos posted on Google Maps with the addresses of 1000 garment factories around the world.<br>All the addresses were found in<br>the list of level 1 (tier 1) suppliers that<br>have produced for MANGO in 2021.</div>
+  <div class="xl-text">collects 6683 photos posted on Google Maps with the addresses of 1000 garment factories around the world.<br>All the addresses were found in<br>the list of level 1 (tier 1) suppliers that<br>have produced for MANGO in 2021.</div>
 </div>
 
 
 <!-- SEC 2 WHY -->
 
-<!-- <div class="full-width d-flex gy-0 scrolledsnap" id="why">
+<div class="full-width d-flex gy-0 scrolledsnap" id="why">
 
   <div class="col-6 standard-margin top-higher-margin" style="position: relative">
 
   <div class="xl-text">
-    INVISIBLE <span style="color: var(--grey)">VALUES</span>
-    INVISIBLE <span style="color: var(--grey)">LABOUR</span>
+    Invisible <span style="color: var(--grey)">values</span>
+    Invisible <span style="color: var(--grey)">labour</span>
   </div>
 
-  <div class="m-text" style="color: blue; text-align: right">02</div>
+  <div class="m-text" style="color: blue; margin-top: 5vh">02</div>
 
   <div class="m-text col-9" style="position: absolute; bottom: var(--margin)">Fashion is one of the most labour-dependent industries, but many companies have decided
 to bypass production completely, by switching
@@ -71,9 +71,9 @@ of corporations to “dematerialise” themselves: since the 1990s, many started
 
 
   <div class="col-6 standard-margin top-higher-margin" style="background-color: #ededed; position: relative">
-  <div class="xl-text"><div>REGAINING<br><img style="height: var(--xl-text); padding: 0.4vw 0 1.1vw 0.4vw; margin-bottom: 0.3vw" src="assets/img/physicality.svg"</div>
+  <div class="xl-text"><div>Regaining<br><img style="height: var(--xl-text); padding: 0 0 0.3vw 0.4vw" src="assets/img/physicality2.svg"></div>
 
-  <div class="m-text" style="color: blue;">WHY</div>
+  <div class="m-text" style="color: blue; margin-top: 5vh">WHY</div>
 
   <div class="m-text col-9" style="position: absolute; bottom: var(--margin)">
     As brands distanced themselves from the material processes, so have clients. They know the real
@@ -87,44 +87,171 @@ of corporations to “dematerialise” themselves: since the 1990s, many started
   </div>
 </div>
 
-</div> -->
+</div>
 
 
 <!-- SEC. 3 HOW - RESEARCH PROCESS -->
 
-<div class="full-width d-flex gy-0 scrolledsnap" id="how">
+<div class="full-width d-flex gy-0 scrolledsnap" style="padding-bottom: 0; background-color: var(--grey)" id="how">
 
 <!-- research process side LEFT -->
-<div class="col-8 top-higher-margin" id="how-sideleft">
+<div id="how-sideleft" class="col-8 top-higher-margin standard-margin">
 
-<div class="row gy-0 standard-margin">
-  <div class="col-6 m-text">Silvia, rimembri ancora Quel tempo della tua vita mortale, Quando beltà splendea Negli occhi tuoi ridenti e fuggitivi, E tu, lieta e pensosa, il limitare 5 Di gioventù salivi?
-  </div>
-  <div class="col-6 align-text-right"><img src="assets/img/how.png"></div>
+<div class="d-flex align-items-start">
+<span class="m-text align-self-start col-1" style="color: blue; transform:translate(0,-0.3vw); line-height:2.5vw">03<br>HOW </span><span class="xl-text">Research</span>
 </div>
 
-<div class="row gy-0 standard-margin">
-  <div class="col-6 m-text">Silvia, rimembri ancora Quel tempo della tua vita mortale, Quando beltà splendea Negli occhi tuoi ridenti e fuggitivi, E tu, lieta e pensosa, il limitare 5 Di gioventù salivi?
+<!-- ROW 1 -->
+
+<div class="row gy-0">
+
+  <div class="col-6 d-inline-flex flex-column justify-content-between m-text">
+    <div>We downloaded the factories list from the Social Responsability section on <a href="https://shop.mango.com/iframe.faces?state=she_005_IT&ts=1671410509722" target="_blank">shop.mango.com¹</a>. These factories are not owned by MANGO and supply multiple other fashion companies.
+    <br><span class="s-text">¹(latest update: December 2021)</span></div>
+    <div class="s-text"><a href="https://staticpages.mngbcn.com/edits/SS21/CATSHE042021SUSTAINABILITY/assets/pdfs/Fabricas-1221-ES__name=FabricasEs.pdf?rand=98839805" target="_blank">Transparency Pledge.pdf↗</a>
+    <br><a href="https://docs.google.com/spreadsheets/d/1LYpATOga9flTJ6-WoWsk1diFYjBmbb3Rsqt5jFguvZk/edit#gid=1216463062" target="_blank">Fabricas-0222-EN_name=Fabricas.xls↗</a></div>
   </div>
-  <div class="col-6 text-align-right"><img src="assets/img/how.png"></div>
+
+  <div class="col-6 align-text-right"><img src="assets/img/project/research1.png"></div>
 </div>
 
-<div class="row gy-0 standard-margin">
-  <div class="col-6 m-text">Silvia, rimembri ancora Quel tempo della tua vita mortale, Quando beltà splendea Negli occhi tuoi ridenti e fuggitivi, E tu, lieta e pensosa, il limitare 5 Di gioventù salivi?
+<!-- ROW 2  -->
+
+<div class="row gy-0">
+
+  <div class="col-6 d-inline-flex flex-column justify-content-between m-text">
+    <div>We searched for the addresses on Google Maps and gathered the real available positions’ URLs.</div>
+    <div class="s-text"><a href="https://docs.google.com/spreadsheets/d/1LYpATOga9flTJ6-WoWsk1diFYjBmbb3Rsqt5jFguvZk/edit#gid=1609854020" target="_blank">mangosupplierslist.csv↗</a></div>
   </div>
-  <div class="col-6 text-align-right"><img src="assets/img/how.png"></div>
+
+  <div class="col-6 text-align-right" style="padding: 0 2vw 0 2vw"><img style="border-radius:4px;" src="assets/img/project/research2.gif"></div>
+</div>
+
+<!-- ROW 3 -->
+
+<div class="row gy-0">
+  <div class="col-6 m-text">In this phase of the project we discovered that more than 400 factories couldn’t be found on Maps, including 262 Chinese factories, as it can be seen in the <a href="map.html">map↗</a>. We scraped all the available positions’ reviews through <a href="https://console.apify.com/actors/nwua9Gu5YrADL7ZD" target="_blank">Google Maps Reviews Apify↗</a>.</div>
+  <div class="col-6 text-align-right"><img src="assets/img/project/research3.png"></div>
+</div>
+
+<!-- ROW 4 -->
+
+<div class="row gy-0">
+
+  <div class="col-6 d-inline-flex flex-column justify-content-between m-text">
+    <div>At this point a new dataset was created, merging together the positions’ URLs previously scraped with the images ones.</div>
+    <div class="s-text"><a href="https://docs.google.com/spreadsheets/d/1LYpATOga9flTJ6-WoWsk1diFYjBmbb3Rsqt5jFguvZk/edit#gid=2103422061" target="_blank">imagesurls.csv↗</a></div>
+  </div>
+
+  <div class="col-6 text-align-right"><img src="assets/img/project/research4.png"></div>
+</div>
+
+<!-- ROW 5 -->
+
+<div class="row gy-0">
+
+  <div class="col-6 d-inline-flex flex-column justify-content-between m-text">
+    <div>From this dataset, all the images were then downloaded using Google Chrome <a href="https://chrome.google.com/webstore/detail/downthemall/nljkibfhlpcnanjgbnlnbjecgicbjkge?hl=en" target="_blank">DownloadThemAll!</a> extension. This folder was then cleaned from the images that did not fit into the research topic.</div>
+    <div class="s-text"><a href="https://drive.google.com/drive/folders/1G9A9pcTMxMfvddTfNG-Uwpmn4zuQBAm1?usp=sharing" target="_blank">ImagesFolder.drive↗</a></div>
+  </div>
+
+  <div class="col-6 text-align-right"><img src="assets/img/project/research5.png"></div>
+</div>
+
+<!-- ROW 6 -->
+
+<div class="row gy-0 m-text">
+
+  <div class="col-6">After we sorted all these images and obtained the clusters, we passed onto the design of the website visualizations.</div>
+
+  <div class="col-6">Got the final 6683 pictures together, they were clustered according to specific filters that we chose according to the most interesting elements that could tell more about these places.</div>
 </div>
 
 </div>
 
 <!-- research process side RIGHT -->
 
-<div class="col-4 standard-margin top-higher-margin" id="how-sideright">
+<div id="how-sideright" class="col-4 top-header-margin standard-margin" style="text-align: center; background-color: var(--grey)">
+<img src="assets/img/protocol.svg" style="height: 100%; width: auto; object-fit: resize">
 </div>
 
 </div>
 
-<!-- SEC. 4 WHO -->
+
+
+<!-- SEC. 4 HOW - DESIGN PROCESS -->
+
+<div class="full-width d-flex gy-0 scrolledsnap" style="padding-bottom: 0; background-color: var(--grey)">
+
+<!-- research process side LEFT -->
+<div id="how-sideleft" class="col-8 top-higher-margin standard-margin">
+
+<div class="d-flex align-items-start">
+<span class="m-text align-self-start col-1" style="color: blue; transform:translate(0,-0.3vw); line-height:2.5vw">03<br>HOW </span><span class="xl-text">Design</span>
+</div>
+
+<!-- ROW 1 -->
+
+<div class="row gy-0">
+
+  <div class="col-6 d-inline-flex flex-column justify-content-between m-text">
+    <div>For the design phase of the project, we looked for and chose 16 interesting filters to visualize the pictures in the website’s atlas.</div>
+    <div class="s-text"><a href="https://docs.google.com/spreadsheets/d/1LYpATOga9flTJ6-WoWsk1diFYjBmbb3Rsqt5jFguvZk/edit#gid=1808509628" target="_blank">imagestags.csv↗</a></div>
+  </div>
+
+  <div class="col-6 align-text-right"><img src="assets/img/project/design1.png"></div>
+</div>
+
+<!-- ROW 2  -->
+
+<div class="row gy-0">
+
+  <div class="col-6 m-text">A cleaned version of the dataset was converted to a bipartite network through <a href="http://medialab.github.io/table2net/" target="_blank">table2net↗</a>.<br>The network was then visualized in Gephi, it was spatialized with Force Atlas 2.0. Expansion and no overlaps algorithms were used.</div>
+
+  <div class="col-6 text-align-right"><img src="assets/img/project/design2.png"></div>
+</div>
+
+<!-- ROW 3 -->
+
+<div class="row gy-0">
+
+  <div class="col-6 m-text">In this way, we made the clustered visualization for the atlas images navigation. The x, y coordinates of the network’s nodes were then converted into terrestrial coordinates in order to respect Pixplot’s umap visualization criteria.<br><br>This conversion was done through an <a href="https://tool-online.com/en/coordinate-converter.php" target="_blank">online coordinates converter tool↗</a> and the result was combined with the previous dataset.</div>
+
+  <div class="col-6 text-align-right"><img src="assets/img/project/design3.png"></div>
+</div>
+
+<!-- ROW 4 -->
+
+<div class="row gy-0">
+  <div class="col-6 m-text">Finally, the dataset and the images folder could be uploaded in Pixplot. Pixplot uses a convolutional neural network in order to cluster visually similar images near one another in a web browser.</div>
+  <div class="col-6 text-align-right"><img style="mix-blend-mode: multiply" src="assets/img/project/design4.jpg"></div>
+</div>
+
+<!-- ROW 5 -->
+
+<div class="row gy-0 m-text">
+
+  <div class="col-6">We chose to use this in order to take advantage of this infrastructure’s way of handling big numbers of images lightly, but importing our project clusters and metadata.</div>
+  <div class="col-6">The default visualization of Pixplot was then customized in HTML, CSS and JavaScript, in order to design the interactions and the different atlas’ filters visualizations. </div>
+</div>
+
+</div>
+
+<!-- design process side RIGHT -->
+
+<div id="how-sideright" class="col-4 top-header-margin standard-margin" style="text-align: center; background-color: var(--grey)">
+<img src="assets/img/protocol2.svg" style="height: 100%; width: auto; object-fit: resize">
+
+<div class="d-flex standard-margin s-text" style="position: absolute; bottom: 0; right: 0; background-color: white;">
+<div style="writing-mode: vertical-lr" class="d-inline-block">HOW TO READ</div>
+<img class="d-inline-block" src="assets/img/project/legend.svg">
+</div>
+
+</div>
+</div>
+
+
+<!-- SEC. 5 WHO -->
 <div class="full-width scrolledsnap standard-margin top-higher-margin" id = "who" style="background-color: black; color: white">
   <div class="d-flex align-items-start justify-content-between">
   <span class="m-text align-self-start" style="color: blue; transform:translate(0,-0.1vw); line-height:2.5vw">04<br>WHO </span><span class="xl-text">Found in Fast Fashion Factories</span>
@@ -138,10 +265,11 @@ of corporations to “dematerialise” themselves: since the 1990s, many started
   <a href="https://www.csvslv.it/">Silvia Casavola</a><br>
   <a href="https://www.instagram.com/laktryn/">Kateryna Lapshyna</a><br>
   <a href="https://www.instagram.com/soregularvlada/">Vlada Ershiva</a><br>
-  <a href="https://iamvisi.altervista.org/">Matteo Visini</a></div>
+  <a href="https://www.instagram.com/matteovisini99">Matteo Visini</a></div>
 <div class="col-3">PROFESSORS<br><br>Michele Mauri<br>Simone Vantini<br>Gabriele Colombo<br>Angeles Briones<br>Salvatore Zingale</div>
 <div class="col-3">ASSISTANTS<br><br>Tommaso Elli<br>Andrea Benedetti<br>Elena Aversa<br>Arianna Bellantuono<br>Alessandra Facchin</div>
 <div class="col-3">Politecnico di Milano<br>Communication Design MSc<br>Final Synthesis Design Studio<br>sect. C3<br>DensityDesign Lab<br>18th Edition<br>A.Y. 2022/23</div>
+</div>
 </div>
 
 </main>
@@ -151,44 +279,56 @@ of corporations to “dematerialise” themselves: since the 1990s, many started
 <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 
 <!-- d3.js -->
-<script src="https://d3js.org/d3.v7.min.js"></script>
-<script src="assets/script/protocol.js"></script>
+<!-- <script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="assets/script/protocol.js"></script> -->
 
 <script>
 var pageheight = $(".full-width").height();
 
 $("#scrollsnap").scroll( function () {
 
-  if ($("#scrollsnap").scrollTop() == 0) {
-$("#what-bm").css("color", "blue")
-$("#what-bm").siblings().css("color", "black")
+// ACTIVATES BOOKMARKS
+
+if ($("#scrollsnap").scrollTop() == 0) {
+$("#what-bm").siblings().removeClass("bm-active")
+$("#what-bm").addClass("bm-active")
 }
 
 if ($("#scrollsnap").scrollTop() > 0) {
-$("#why-bm").css("color", "blue")
-$("#why-bm").siblings().css("color", "black")
+$("#why-bm").siblings().removeClass("bm-active")
+$("#why-bm").addClass("bm-active")
 }
 
-if ($("#scrollsnap").scrollTop() > pageheight*2) {
-$("#how-bm").css("color", "blue")
-$("#how-bm").siblings().css("color", "black")
+if ($("#scrollsnap").scrollTop() > pageheight*1.2) {
+$("#how-bm").siblings().removeClass("bm-active")
+$("#how-bm").addClass("bm-active")
   }
 
 if ($("#scrollsnap").scrollTop() > pageheight*4) {
-$("#how-bm").css("color", "blue")
-$("#how-bm").siblings().css("color", "black")
+$("#who-bm").siblings().removeClass("bm-active")
+$("#who-bm").addClass("bm-active")
   }
 })
 
-$(".bm").click(function () {
-let destination = '#' + $(this).html();
-let offset = $(destination).offset();
-let offsetTop = offset.top;
 
-  // $(window).scrollTop(scrollTop)
-$("#scrollsnap").animate({scrollTop : offsetTop})
-})
+// BOOKMARKS SCROLL
 
+// function restorescroll() { $("#scrollsnap").css("scroll-snap-type", "y mandatory") }
+// var dfd = $.Deferred();
+// dfd.then(restorescroll())
+
+// var bm = $(".bm")
+//
+// bm.click(function scrollto () {
+// let destination = '#' + $(this).html();
+// let offset = $(destination).offset();
+// let offsetTop = offset.top;
+
+// $("#scrollsnap").css("scroll-snap-type", "none")
+// $("#scrollsnap").animate({scrollTop:offsetTop}, "slow")
+
+// dfd.resolve();
+// })
 </script>
 
 </body>
