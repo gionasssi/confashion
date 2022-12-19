@@ -3,13 +3,13 @@ body,
 html,
 canvas {
   overflow: hidden;
-  height: 100%;
 }
 
 body,
 html {
   background: #ffffff;
   touch-action: none;
+  max-height: 100vh;
 }
 
 a {
@@ -986,13 +986,25 @@ animation-play-state: paused;
 
 #loader-text {
   position: absolute; 
-  width: 100%;
+  top: var(--top-higher-margin);
   bottom: var(--margin);
+  left: 0;
+  right: 0;
+  text-align: center;
   cursor:pointer;
+  overflow: hidden;
 }
 
 #loader-text :hover {
   text-decoration:underline;
+}
+
+#progress {
+  position: absolute;
+  bottom: 1vw;
+  left: 0;
+  right: 0;
+  /* transform:translate(0, +10%); */
 }
 
 /* .welcome {
@@ -1011,11 +1023,17 @@ animation-play-state: paused;
     animation-iteration-count: 1;
   }
 }
-/*
+
 #clicktoenter {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 35%;
+  /* transform:translate(0,-50%); */
   animation: blink 0.4s alternate infinite;
+  color: var(--grey);
 	}
-*/
+
 @keyframes blink{
 0%{opacity: 0;}
 100%{opacity: 1;}
@@ -1033,8 +1051,7 @@ animation-play-state: paused;
 } */
 
 .loader-icon {
-  width: 70px;
-  height: 70px;
+  width: 0px;
 }
 
 .block {
@@ -1239,13 +1256,14 @@ noscript {
   /* height: 115px; */
 }
 
+/*
 .modal-bottom-content {
-  /* font-size: 12px;
-  line-height: 18px; */
-  /* display: flex;
+   font-size: 12px;
+  line-height: 18px; 
+   display: flex;
   flex-direction: row;
-  justify-content: space-between; */
-}
+  justify-content: space-between;
+}*/
 
 .modal-bottom-content b {
   /* margin-bottom: 5px; */
@@ -1267,7 +1285,7 @@ noscript {
   z-index: 11;
   display: none;
   animation: fade-in 0.3s forwards;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
 }
 

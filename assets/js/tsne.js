@@ -3622,7 +3622,7 @@ Welcome.prototype.updateProgress = function() {
   var index = progress.indexOf('.');
   if (index > -1) progress = progress.substring(0, index);
   // display the load progress
-  this.progressElem.textContent = 'ATLAS ' + progress + '%';
+  this.progressElem.textContent = 'Loading ' + progress + '%';
   if (progress == 100 &&
       data.loadedTextures == data.textureCount &&
       world.heightmap) {
