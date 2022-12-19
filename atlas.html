@@ -8,7 +8,7 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet'>
     <link rel='stylesheet' type='text/css' href='style/no-ui-slider.css'>
     <link rel='stylesheet' type='text/css' href='style/atlas.css'>
-    <link rel='stylesheet' type='text/css' href='style/global0.css'>
+    <link rel='stylesheet' type='text/css' href='style/global.css'>
     <!-- JQUERY-->
     <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     </head>
@@ -517,7 +517,7 @@
       </div>
     </div>
     <!-- Dismissible Tooltip: Hotspots -->
-    <div class='dismissible-tooltip' id='hotspots-tooltip'>
+    <div class='dismissible-tooltip' id='hotspots-tooltip' hidden>
       <b>Explore Image Clusters</b>
       <p>Select a hotspot to explore visually similar clusters.</p>
       <button id='hotspots-tooltip-button'>Got it</button>
@@ -563,6 +563,11 @@
             <div class="d-flex gy-0 justify-content-between" style="width: 100%">
               <div>LON</div>
             <div style="text-align: right; max-width: 70%"><%= meta.truelng ? decodeURIComponent(meta.truelng) : '' %></div>
+            </div>
+
+            <div class="d-flex gy-0 justify-content-between" style="width: 100%">
+              <div>CLUSTERS</div>
+            <div style="text-align: right; max-width: 70%"><%= meta.tag ? decodeURIComponent(meta.tag) : '' %></div>
             </div>
             
               <!-- <% if (meta.category || meta.tags) { %>
