@@ -46,9 +46,14 @@ bm:hover {
   right: -10vw;
   background-color: white;
   transition: right 1s;
-  cursor: pointer; 
+  cursor: pointer;
 }
 
 .protocol-legend:hover{
   right: 0;
+}
+
+#who img {
+  height: var(--l-text);
+  padding: 0.4vw var(--margin) 0 0.2vw;
 }
