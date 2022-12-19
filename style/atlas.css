@@ -703,15 +703,15 @@ nav h2 {
   gap: 12vw;
 }
 
-.marquee::-webkit-scrollbar {
+#hotspots::-webkit-scrollbar {
   display: none;
 }
 
-.marquee:hover {
+#hotspots:hover {
   overflow-x: scroll;
   }
 
-.marquee:hover .marquee-inner{
+#hotspots:hover .marquee-inner{
 animation-play-state: paused;
 }
 
