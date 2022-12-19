@@ -25,8 +25,6 @@
 }
 
 
-/* DESKTOP VARIABLES */
-@media (min-width: 992px) {
   :root {
   /* MARGINS */
   --margin: 0.9vw;
@@ -42,29 +40,14 @@
   --xxl-text: 13.2vw; --xxl-lh: 11vw;
   }
 
-/* DESKTOP FONT SIZES */
+/* FONT SIZES */
 .s-text {font-size: var(--s-text); line-height: var(--s-lh)}
 .m-text {font-size: var(--m-text); line-height: var(--m-lh)}
 .l-text {font-size: var(--l-text); line-height: var(--l-lh)}
 .xl-text {font-size: var(--xl-text); line-height: var(--xl-lh)}
 .xxl-text {font-size: var(--xxl-text); line-height: var(--xxl-lh)}
-}
 
-
-/* MOBILE VARIABLES */
-@media (max-width: 991.98px) {
-  :root {
-  /* MARGINS */
-  --margin: 20px;
-  }
-
-/* MOBILE FONT SIZES */
-.s-text {font-size: 16px}
-.m-text {font-size: 20px}
-.l-text {font-size: 36px}
-.xl-text {font-size: 100px}
-.xxl-text {font-size: 120px;}
-}
+/* } */
 
 
 
@@ -88,7 +71,7 @@ body {
   height: 100vh;
 }
 
-/* STYLE LINKS */
+/* LINKS */
 a {
 color: black;
 text-decoration: none;
@@ -98,11 +81,27 @@ a:hover {
   color: blue;
 }
 
-#header-logo:hover {
-  content:url("../assets/img/bluelogo.svg")
+
+/* MARGIN STYLES */
+.d-inline-block {
+  position: relative;
 }
 
+.standard-margin {
+  padding: var(--margin)
+}
+
+.top-header-margin {
+  padding-top: var(--top-header-margin);
+}
+
+.top-higher-margin {
+  padding-top: var(--top-higher-margin);
+}
+
+
 /* HEADER */
+
 #header {
   z-index: 10;
   position: fixed;
@@ -119,40 +118,25 @@ a:hover {
   padding-bottom: 0.1vw;
 }
 
+#header-logo:hover {
+  content:url("../assets/img/bluelogo.svg")
+}
+
 #header a, .marquee span {
   line-height: 1.1vw;
   transform:translate(0, 15%)
 }
 
-#header-row-1 {
-background-color: white;
-}
+#header-row-1 {background-color: white;}
 
-#header-row-2 {
-background-color: var(--grey);
-}
+#header-row-2 {background-color: var(--grey);}
 
 .d-inline-block img {
   width: 100%;
 }
 
-.d-inline-block {
-  /* overflow-y: scroll; */
-  position: relative;
-}
 
-.standard-margin {
-  padding: var(--margin)
-}
-
-.top-header-margin {
-  padding-top: var(--top-header-margin);
-}
-
-.top-higher-margin {
-  padding-top: var(--top-higher-margin);
-}
-
+/* SCROLLSNAP */
 
 #scrollsnap::-webkit-scrollbar {
   display: none;
@@ -171,6 +155,9 @@ background-color: var(--grey);
     position:relative;
 }
 
+
+/* FOOTER */
+
 #footer a {
   color: white
 }
@@ -182,4 +169,10 @@ background-color: var(--grey);
 #footer img {
   height: 3vw;
   margin: 0 var(--margin) var(--margin) 0;
+}
+
+
+/* DESKTOP VARIABLES */
+@media (min-width: 992px) {
+  #mobile-text {display: none}
 }
