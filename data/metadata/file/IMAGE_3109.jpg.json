@@ -6,6 +6,7 @@
     "city": "Giza",
     "category": "EGYPT",
     "address": "Kafr Hakim, Kerdasa Road, Embaba",
+    "clusters": "Vehicles; ",
     "truelat": "30.0815975",
     "truelng": "31.1950354",
     "lat": "-75.4437",

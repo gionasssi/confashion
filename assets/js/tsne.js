@@ -150,7 +150,7 @@ Data.prototype.parseManifest = function(json) {
   config.size.lodCell = json.config.sizes.lod;
   config.size.points = json.point_sizes;
   // update the point size DOM element
-  world.elems.pointSize.min = 0.006;
+  world.elems.pointSize.min = 0.005;
   world.elems.pointSize.max = config.size.points.max;
   world.elems.pointSize.value = config.size.points.initial / window.devicePixelRatio;
   // set number of atlases and textures
@@ -1186,6 +1186,7 @@ World.prototype.getGroupAttributes = function(cells) {
     it.height[it.heightIterator++] = cell.h; // px height of cell in lod atlas
     it.offset[it.offsetIterator++] = cell.dx; // px offset of cell from left of tex
     it.offset[it.offsetIterator++] = cell.dy; // px offset of cell from top of tex
+    
   }
 
   var positions = new Float32Array([
@@ -2468,7 +2469,7 @@ Text.prototype.getTexture = function() {
   canvas.id = 'character-canvas';
   ctx.font = this.point + 'px Monospace';
   // give the canvas a black background for pixel discarding
-  ctx.fillStyle = '#000000';
+  ctx.fillStyle = '#ffffff';
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   ctx.fillStyle = '#ffffff';
   // draw the letters on the canvas
@@ -3435,7 +3436,7 @@ Globe.prototype.load = function() {
     parentGeometry.merge(mesh.geometry, mesh.matrix);
   }
 
-  get(getPath('assets/json/flat-continents2.json'), function(json) {
+  get(getPath('assets/json/flat-continents.json'), function(json) {
     json.forEach(addShape.bind(this, self.globeGeometry));
     var material = new THREE.MeshBasicMaterial({
       color: 0x333333,
