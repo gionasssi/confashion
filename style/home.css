@@ -13,15 +13,6 @@
   cursor: pointer;
 }
 
-#marquee {
-  position: fixed;
-  top: var(--top-margin);
-  text-transform: uppercase;
-  transform:translate(0, -8%);
-  width: 100%;
-  z-index: 10;
-}
-
 
 body::-webkit-scrollbar {
   display: none;

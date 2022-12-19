@@ -342,7 +342,7 @@ z-index: 4; */
   /* display: none; */
   position: absolute;
   font-size: s-text;
-  min-width: 17vw;
+  min-width: 15vw;
     bottom:0;
     left: 100%;
   background: #fff;
@@ -697,15 +697,22 @@ nav h2 {
 #hotspots {
   position: absolute;
   top: 0;
-  overflow-x: scroll;
   white-space: nowrap;
   padding: var(--margin) var(--margin) var(--margin) var(--margin);
   display: flex;
   gap: 12vw;
 }
 
-#hotspots::-webkit-scrollbar {
+.marquee::-webkit-scrollbar {
   display: none;
+}
+
+.marquee:hover {
+  overflow-x: scroll;
+  }
+
+.marquee:hover .marquee-inner{
+animation-play-state: paused;
 }
 
 .hotspot {
@@ -1260,7 +1267,8 @@ noscript {
   z-index: 11;
   display: none;
   animation: fade-in 0.3s forwards;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 #selected-image-modal .modal-top {
@@ -1995,3 +2003,4 @@ input[type=text] {
   }
 
 }
+
