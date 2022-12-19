@@ -3607,27 +3607,13 @@ function Welcome() {
 Welcome.prototype.onButtonClick = function(e) {
   if (e.target.className.indexOf('active') > -1) {
     requestAnimationFrame(function() {
-      this.removeLoader(function() {
-        this.startWorld();
+      this.startWorld(function() {
+        this.removeLoader();
       }.bind(this));
     }.bind(this));
   }
 }
 
-Welcome.prototype.removeLoader = function(onSuccess) {
-  var blocks = document.querySelectorAll('.block');
-  for (var i=0; i<blocks.length; i++) {
-    setTimeout(function(i) {
-      blocks[i].style.animation = 'exit 300s';
-      setTimeout(function(i) {
-        blocks[i].parentNode.removeChild(blocks[i]);
-        if (i == blocks.length-1) onSuccess();
-      }.bind(this, i), 1000)
-    }.bind(this, i), i*100)
-  }
-  document.querySelector('#progress').style.opacity = 0;
-  document.querySelector('#clicktoenter').style.opacity = 0;
-}
 
 Welcome.prototype.updateProgress = function() {
   var progress = valueSum(data.textureProgress) / data.textureCount;
@@ -3644,7 +3630,7 @@ Welcome.prototype.updateProgress = function() {
   }
 }
 
-Welcome.prototype.startWorld = function() {
+Welcome.prototype.startWorld = function(onSuccess) {
   requestAnimationFrame(function() {
     world.init();
     picker.init();
@@ -3657,6 +3643,22 @@ Welcome.prototype.startWorld = function() {
       })
     }, 1500)
   }.bind(this))
+}
+
+
+Welcome.prototype.removeLoader = function() {
+  var blocks = document.querySelectorAll('.block');
+  for (var i=0; i<blocks.length; i++) {
+    setTimeout(function(i) {
+      blocks[i].style.animation = 'exit 300s';
+      setTimeout(function(i) {
+        blocks[i].parentNode.removeChild(blocks[i]);
+        if (i == blocks.length-1) onSuccess();
+      }.bind(this, i), 1000)
+    }.bind(this, i), i*100)
+  }
+  document.querySelector('#progress').style.opacity = 0;
+  document.querySelector('#clicktoenter').style.opacity = 0;
 }
 
 /**
